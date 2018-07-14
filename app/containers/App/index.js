@@ -16,10 +16,12 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import BrandedHeader from '../../containers/BrandedHeader';
 
 export default function App() {
   return (
     <div>
+      <BrandedHeader />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route component={NotFoundPage} />
