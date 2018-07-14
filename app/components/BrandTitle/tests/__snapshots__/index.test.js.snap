@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrandTitle /> Renders a BrandTitle Component 1`] = `
+<div>
+  <h1
+    className="BrandTitle__BrandTitleBase-fCqnon fsKsKs"
+  >
+    Cinched Tight
+  </h1>
+  <h2
+    className="BrandTitle__BrandMessage-bmovll bAcupH"
+  >
+    Celebrate Your Shape
+  </h2>
+</div>
+`;
