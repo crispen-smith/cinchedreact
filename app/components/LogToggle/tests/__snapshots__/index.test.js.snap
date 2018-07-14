@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LogToggle /> Renders a MegaLogoBase 1`] = `<div />`;
