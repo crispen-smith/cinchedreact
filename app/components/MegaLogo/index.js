@@ -8,6 +8,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const MegaLogoBase = styled.div`
+  font-family: 
+  
   flex-basis: 13vw;
   flex-grow: 1;
   padding: 0;
