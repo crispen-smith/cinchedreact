@@ -21,7 +21,7 @@ import BrandBox from '../../components/BrandBox';
 import LogToggle from '../../components/LogToggle';
 
 import * as brandActions from './actions';
-import colors from '../../resources/colors';
+import { colors } from '../../resources/colors';
 
 const BH = styled.div`
   display: flex;
@@ -58,7 +58,7 @@ const mapStateToProps = createStructuredSelector({
   loggedIn: makeSelectLoggedIn(),
 });
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     dispatch,
   };

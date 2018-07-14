@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrandedHeader /> Renders a BrandBox 1`] = `
+<div
+  className="BrandedHeader__BH-HxBPG cbfNhb"
+>
+  <div
+    className="BrandBox__BrandBoxBase-bOpzwz dvPfFb"
+  >
+    <div
+      className="MegaLogo__MegaLogoBase-gVmnHe cypxsg"
+    >
+      <span
+        className="MegaLogo__C-hBLyQD CnhnX"
+      >
+        C
+      </span>
+      <span
+        className="MegaLogo__C-hBLyQD iPmZWc"
+      >
+        T
+      </span>
+    </div>
+  </div>
+  <div />
+</div>
+`;
