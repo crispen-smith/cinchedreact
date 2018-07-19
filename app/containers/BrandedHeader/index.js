@@ -22,7 +22,7 @@ import LogToggle from '../../components/LogToggle';
 import BrandTitle from '../../components/BrandTitle';
 
 import * as brandActions from './actions';
-import { colors } from '../../resources/colors';
+import colors from '../../resources/colors';
 
 const BH = styled.div`
   display: flex;

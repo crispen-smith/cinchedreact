@@ -4,7 +4,10 @@
  * to ensure consistant colors throughout the app.
  */
 
-export const colors = {
+const colors = {
   white: '#FAFAFA',
   pink: '#fde0e0',
+  blue: 'blue',
 };
+
+export default colors;
