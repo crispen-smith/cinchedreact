@@ -1,9 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<LogToggle /> Renders a MegaLogoBase 1`] = `
-<div
-  className="LogToggle__LT-bRttfU dlmwTd"
+exports[`<LogToggle /> Renders a LogToggle (Not loggedIn) 1`] = `
+<a
+  className="LogToggle__LT-bRttfU hgLLdv"
+  onClick={[Function]}
 >
-  THIS IS THE LOG TOGGLE
-</div>
+  Log In
+</a>
+`;
+
+exports[`<LogToggle /> Renders a LogToggle (loggedIn) 1`] = `
+<a
+  className="LogToggle__LT-bRttfU hgLLdv"
+  onClick={[Function]}
+>
+  Log Out
+</a>
 `;

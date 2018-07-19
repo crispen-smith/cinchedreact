@@ -36,10 +36,11 @@ exports[`<BrandedHeader /> Renders a BrandBox 1`] = `
       Celebrate Your Shape
     </h2>
   </div>
-  <div
-    className="LogToggle__LT-bRttfU dlmwTd"
+  <a
+    className="LogToggle__LT-bRttfU hgLLdv"
+    onClick={[Function]}
   >
-    THIS IS THE LOG TOGGLE
-  </div>
+    Log Out
+  </a>
 </div>
 `;

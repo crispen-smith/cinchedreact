@@ -20,7 +20,7 @@ const LT = styled.a`
 `;
 
 function LogToggle(props) {
-  const val = props.loggedIn ? 'LOGGED IN' : 'NOT LOGGED IN';
+  const val = props.loggedIn ? 'Log Out' : 'Log In';
   return <LT onClick={props.onClick}>{val}</LT>;
 }
 
