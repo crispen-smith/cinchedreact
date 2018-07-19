@@ -9,10 +9,9 @@ import styled from 'styled-components';
 import MegaLogo from '../MegaLogo';
 
 const BrandBoxBase = styled.div`
-  width: 80%;
   padding: 0;
   margin: 0;
-  flex: 4;
+  flex: 1;
 `;
 
 function BrandBox() {

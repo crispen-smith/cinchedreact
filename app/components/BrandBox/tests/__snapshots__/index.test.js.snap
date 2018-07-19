@@ -2,10 +2,10 @@
 
 exports[`<BrandBox /> Renders a BrandBox 1`] = `
 <div
-  className="BrandBox__BrandBoxBase-bOpzwz dvPfFb"
+  className="BrandBox__BrandBoxBase-bOpzwz dtwMcz"
 >
   <div
-    className="MegaLogo__MegaLogoBase-gVmnHe cypxsg"
+    className="MegaLogo__MegaLogoBase-gVmnHe fjUeHC"
   >
     <span
       className="MegaLogo__C-hBLyQD CnhnX"

@@ -8,6 +8,14 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+const BT = styled.div`
+  flex: 8;
+  padding-top: 1.5rem;
+  padding-bottom: 0;
+  margin: 0;
+  line-height: 1.5;
+`;
+
 const BrandTitleBase = styled.h1`
   margin: 0;
   font-family: 'Monsieur La Doulaise', cursive;
@@ -24,10 +32,10 @@ const BrandMessage = styled.h2`
 
 function BrandTitle() {
   return (
-    <div>
+    <BT>
       <BrandTitleBase>Cinched Tight</BrandTitleBase>
       <BrandMessage>Celebrate Your Shape</BrandMessage>
-    </div>
+    </BT>
   );
 }
 

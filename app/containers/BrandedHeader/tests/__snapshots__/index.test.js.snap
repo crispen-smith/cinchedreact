@@ -2,13 +2,13 @@
 
 exports[`<BrandedHeader /> Renders a BrandBox 1`] = `
 <div
-  className="BrandedHeader__BH-HxBPG cbfNhb"
+  className="BrandedHeader__BH-HxBPG kskhDL"
 >
   <div
-    className="BrandBox__BrandBoxBase-bOpzwz dvPfFb"
+    className="BrandBox__BrandBoxBase-bOpzwz dtwMcz"
   >
     <div
-      className="MegaLogo__MegaLogoBase-gVmnHe cypxsg"
+      className="MegaLogo__MegaLogoBase-gVmnHe fjUeHC"
     >
       <span
         className="MegaLogo__C-hBLyQD CnhnX"
@@ -22,6 +22,24 @@ exports[`<BrandedHeader /> Renders a BrandBox 1`] = `
       </span>
     </div>
   </div>
-  <div />
+  <div
+    className="BrandTitle__BT-iyACyt doctaa"
+  >
+    <h1
+      className="BrandTitle__BrandTitleBase-fCqnon fsKsKs"
+    >
+      Cinched Tight
+    </h1>
+    <h2
+      className="BrandTitle__BrandMessage-bmovll bAcupH"
+    >
+      Celebrate Your Shape
+    </h2>
+  </div>
+  <div
+    className="LogToggle__LT-bRttfU dlmwTd"
+  >
+    THIS IS THE LOG TOGGLE
+  </div>
 </div>
 `;

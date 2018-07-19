@@ -19,12 +19,15 @@ import reducer from './reducer';
 import saga from './saga';
 import BrandBox from '../../components/BrandBox';
 import LogToggle from '../../components/LogToggle';
+import BrandTitle from '../../components/BrandTitle';
 
 import * as brandActions from './actions';
 import { colors } from '../../resources/colors';
 
 const BH = styled.div`
   display: flex;
+  line-height: 1.1;
+  padding-top: 0.25rem;
   background-color: ${colors.pink};
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1);
@@ -32,7 +35,7 @@ const BH = styled.div`
 
 class BrandedHeaderBase extends React.Component { // eslint-disable-line
   render() {
-    const dispatch = { ...this.props };
+    const { dispatch } = this.props;
     let action;
     if (this.props.loggedIn) {
       action = brandActions.logout();
@@ -44,6 +47,7 @@ class BrandedHeaderBase extends React.Component { // eslint-disable-line
     return (
       <BH>
         <BrandBox />
+        <BrandTitle />
         <LogToggle loggedIn={this.props.loggedIn} onClick={loggingSwitch} />
       </BH>
     );
@@ -52,6 +56,7 @@ class BrandedHeaderBase extends React.Component { // eslint-disable-line
 
 BrandedHeaderBase.propTypes = {
   loggedIn: PropTypes.bool.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({

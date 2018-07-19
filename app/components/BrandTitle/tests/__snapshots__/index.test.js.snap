@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<BrandTitle /> Renders a BrandTitle Component 1`] = `
-<div>
+<div
+  className="BrandTitle__BT-iyACyt doctaa"
+>
   <h1
     className="BrandTitle__BrandTitleBase-fCqnon fsKsKs"
   >
