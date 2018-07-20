@@ -37,7 +37,7 @@ exports[`<BrandedHeader /> Renders a BrandBox 1`] = `
     </h2>
   </div>
   <a
-    className="LogToggle__LT-bRttfU hgLLdv"
+    className="LogToggle__LT-bRttfU iacwAB"
     onClick={[Function]}
   >
     Log Out
