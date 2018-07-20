@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NameBox /> Renders a NameBox 1`] = `
+<div
+  className="form-row-primary"
+>
+  <label
+    htmlFor="TEST_NAME"
+  >
+    TEST_LABEL
+    <input
+      id="TEST_NAME"
+      onChange={[Function]}
+      type="text"
+    />
+  </label>
+</div>
+`;

@@ -1,10 +1,23 @@
-// import React from 'react';
-// import { shallow } from 'enzyme';
+import React from 'react';
+import renderer from 'react-test-renderer';
 
-// import NameBox from '../index';
+import NameBox from '../index';
 
 describe('<NameBox />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  const InputName = 'TEST_NAME';
+  const InputLabel = 'TEST_LABEL';
+  const onChange = () => 1;
+
+  it('Renders a NameBox', () => {
+    const tree = renderer
+      .create(
+        <NameBox
+          inputLabel={InputLabel}
+          inputName={InputName}
+          onChange={onChange}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
