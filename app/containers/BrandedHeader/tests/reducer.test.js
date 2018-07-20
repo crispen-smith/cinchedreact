@@ -9,7 +9,7 @@ describe(brandReducer, () => {
 
   beforeAll(() => {
     state = fromJS({
-      loggedIn: false,
+      loggedIn: true,
     });
   });
 

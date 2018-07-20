@@ -4,18 +4,22 @@ import { login, logout } from '../actions';
 
 describe('Brand Actions', () => {
   describe('login', () => {
-    const expectedResult = {
-      type: BRAND_ACTIONS.LOGIN,
-    };
+    it('should return logged in state', () => {
+      const expectedResult = {
+        type: BRAND_ACTIONS.LOGIN,
+      };
 
-    expect(login()).toEqual(expectedResult);
+      expect(login()).toEqual(expectedResult);
+    });
   });
 
   describe('logout', () => {
-    const expectedResult = {
-      type: BRAND_ACTIONS.LOGOUT,
-    };
+    it('should return a logged out state', () => {
+      const expectedResult = {
+        type: BRAND_ACTIONS.LOGOUT,
+      };
 
-    expect(logout()).toEqual(expectedResult);
+      expect(logout()).toEqual(expectedResult);
+    });
   });
 });
