@@ -17,6 +17,10 @@ const LT = styled.a`
   text-align: right;
   padding-right: 1rem;
   color: ${colors.blue};
+  cursor: pointer;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 4.5rem;
 `;
 
 function LogToggle(props) {

@@ -2,7 +2,7 @@
 
 exports[`<LogToggle /> Renders a LogToggle (Not loggedIn) 1`] = `
 <a
-  className="LogToggle__LT-bRttfU hgLLdv"
+  className="LogToggle__LT-bRttfU iacwAB"
   onClick={[Function]}
 >
   Log In
@@ -11,7 +11,7 @@ exports[`<LogToggle /> Renders a LogToggle (Not loggedIn) 1`] = `
 
 exports[`<LogToggle /> Renders a LogToggle (loggedIn) 1`] = `
 <a
-  className="LogToggle__LT-bRttfU hgLLdv"
+  className="LogToggle__LT-bRttfU iacwAB"
   onClick={[Function]}
 >
   Log Out
