@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 import BRAND_ACTIONS from './constants';
-const initialState = fromJS({ loggedIn: true });
+export const initialState = fromJS({ loggedIn: true });
 
 function brandReducer(state = initialState, action) {
   switch (action.type) {
