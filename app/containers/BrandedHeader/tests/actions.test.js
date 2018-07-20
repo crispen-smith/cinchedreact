@@ -16,6 +16,6 @@ describe('Brand Actions', () => {
       type: BRAND_ACTIONS.LOGOUT,
     };
 
-    expect(logout().toEqual(expectedResult));
+    expect(logout()).toEqual(expectedResult);
   });
 });
