@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DropDown /> Renders a NameBox 1`] = `
+<div
+  className="form-row-primary"
+>
+  <label
+    htmlFor="TEST_NAME"
+  >
+    TEST_LABEL
+    <select
+      id="TEST_NAME"
+      onChange={[Function]}
+    >
+      <option
+        value="First"
+      >
+        First
+      </option>
+      <option
+        value="Second"
+      >
+        Second
+      </option>
+      <option
+        value="Third"
+      >
+        Third
+      </option>
+    </select>
+  </label>
+</div>
+`;

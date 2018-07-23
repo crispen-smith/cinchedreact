@@ -1,10 +1,25 @@
-// import React from 'react';
-// import { shallow } from 'enzyme';
+import React from 'react';
+import renderer from 'react-test-renderer';
 
-// import DropDown from '../index';
+import DropDown from '../index';
 
 describe('<DropDown />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  const InputName = 'TEST_NAME';
+  const InputLabel = 'TEST_LABEL';
+  const onChange = () => 1;
+  const Options = ['First', 'Second', 'Third'];
+
+  it('Renders a NameBox', () => {
+    const tree = renderer
+      .create(
+        <DropDown
+          inputLabel={InputLabel}
+          inputName={InputName}
+          onChange={onChange}
+          options={Options}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
