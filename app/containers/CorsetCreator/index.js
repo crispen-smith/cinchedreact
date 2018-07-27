@@ -16,6 +16,7 @@ import injectReducer from 'utils/injectReducer';
 import makeSelectCorsetCreator from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+import FormComponent from '../../components/FormComponent';
 
 /* eslint-disable react/prefer-stateless-function */
 export class CorsetCreator extends React.Component {
@@ -26,6 +27,8 @@ export class CorsetCreator extends React.Component {
           <title>CorsetCreator</title>
           <meta name="description" content="Description of CorsetCreator" />
         </Helmet>
+        <FormComponent onSubmit={this.props.dispatch}>HI!</FormComponent>
+        CORSET CREATOR
       </div>
     );
   }
