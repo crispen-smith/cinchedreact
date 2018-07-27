@@ -1,8 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<NameBox /> Renders a FormComponent 1`] = `
+exports[`<FormComponent /> Renders a FormComponent 1`] = `
 <form
   className="FormComponent__FC-jRyaDy hZINgg"
   onSubmit={[Function]}
-/>
+>
+  <label
+    htmlFor="test"
+  >
+    <input
+      id="test"
+      type="text"
+    />
+  </label>
+</form>
 `;
