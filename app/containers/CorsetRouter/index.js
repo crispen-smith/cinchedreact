@@ -5,27 +5,33 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
+import { Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
 
-function CorsetRouter() {
-  return <div />;
-}
+import CorsetEditor from 'containers/CorsetEditor';
+import CorsetGallery from 'containers/CorsetGallery';
+import CorsetCreator from 'containers/CorsetCreator';
+import Corset from 'containers/Corset';
 
-CorsetRouter.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-};
+const NF = styled.div`
+  font-size: 2rem;
+  width: 100%;
+  padding: 0;
+  padding-top: 3rem;
+  margin: 0;
+  text-align: center;
+`;
 
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-  };
-}
+const NotFound = () => <NF>Oh-oh, looks like something went wrong.</NF>;
 
-const withConnect = connect(
-  null,
-  mapDispatchToProps,
+const CorsetRouter = () => (
+  <Switch>
+    <Route exact path="/corsets/edit/:id" component={CorsetEditor} />
+    <Route exact path="/corsets/create/" component={CorsetCreator} />
+    <Route exact path="/corsets/:id" component={Corset} />
+    <Route exact path="/corsets/" component={CorsetGallery} />
+    <Route component={NotFound} />
+  </Switch>
 );
 
-export default compose(withConnect)(CorsetRouter);
+export default CorsetRouter;
