@@ -1,5 +1,4 @@
 import React from 'react';
-// import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import { MemoryRouter, browserHistory } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -9,7 +8,6 @@ import configureStore from '../../../configureStore';
 
 describe('<CorsetRouter />', () => {
   let match;
-  // let location;
   let store;
 
   beforeAll(() => {
