@@ -13,6 +13,7 @@ import { compose } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+import FormComponent from 'components/FormComponent';
 import makeSelectCorsetEditor from './selectors';
 import reducer from './reducer';
 import saga from './saga';
@@ -26,6 +27,9 @@ export class CorsetEditor extends React.Component {
           <title>CorsetEditor</title>
           <meta name="description" content="Description of CorsetEditor" />
         </Helmet>
+        <FormComponent onSubmit={this.props.dispatch}>
+          PLACEHOLDER
+        </FormComponent>
       </div>
     );
   }

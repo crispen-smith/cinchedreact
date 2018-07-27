@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CorsetEditor /> Renders a CorsetEditor 1`] = `
+<div>
+  <form
+    className="FormComponent__FC-jRyaDy hZINgg"
+    onSubmit={[Function]}
+  >
+    PLACEHOLDER
+  </form>
+</div>
+`;
