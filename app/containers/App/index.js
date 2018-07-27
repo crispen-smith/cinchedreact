@@ -16,7 +16,8 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import BrandedHeader from '../../containers/BrandedHeader';
+import BrandedHeader from 'containers/BrandedHeader';
+import CorsetRouter from 'containers/CorsetRouter';
 
 export default function App() {
   return (
@@ -24,6 +25,13 @@ export default function App() {
       <BrandedHeader />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route
+          exact
+          path="/corsets/:action/:subject"
+          component={CorsetRouter}
+        />
+        <Route exact path="/corsets/:action" component={CorsetRouter} />
+        <Route exact path="/corsets" component={CorsetRouter} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>
