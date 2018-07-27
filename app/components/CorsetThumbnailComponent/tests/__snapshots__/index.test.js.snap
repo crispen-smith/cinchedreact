@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CorsetThumbnailComponent /> Renders a BrandBox 1`] = `
+<div
+  className="CorsetThumbnailComponent__CTC-bqQMiC jMdXR"
+>
+  <a
+    href="corsets/test"
+  >
+    <span>
+      test
+    </span>
+    <img
+      alt="test"
+      src="test"
+    />
+    <div
+      className="summary"
+    >
+      test
+    </div>
+  </a>
+</div>
+`;
