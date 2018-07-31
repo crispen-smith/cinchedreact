@@ -14,8 +14,36 @@ describe('<CorsetRouter />', () => {
     store = configureStore({}, browserHistory);
   });
 
-  it('Renders the gallery when the path is /corsets', () => {
-    match = ['/corsets'];
+  it('Renders the gallery when the path is /corsets/all', () => {
+    match = ['/corsets/all'];
+
+    const wrapper = mount(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={match}>
+          <CorsetRouter />
+        </MemoryRouter>
+      </Provider>,
+    );
+
+    expect(wrapper.find('CorsetGallery')).toHaveLength(1);
+  });
+
+  it('Renders the gallery when the path is /corsets/overbust', () => {
+    match = ['/corsets/overbust'];
+
+    const wrapper = mount(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={match}>
+          <CorsetRouter />
+        </MemoryRouter>
+      </Provider>,
+    );
+
+    expect(wrapper.find('CorsetGallery')).toHaveLength(1);
+  });
+
+  it('Renders the gallery when the path is /corsets/all', () => {
+    match = ['/corsets/underbust'];
 
     const wrapper = mount(
       <Provider store={store}>

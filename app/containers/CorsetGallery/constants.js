@@ -1,7 +1,10 @@
-/*
- *
- * CorsetGallery constants
- *
- */
+import KeyMirror from 'keymirror';
 
-export const DEFAULT_ACTION = 'app/CorsetGallery/DEFAULT_ACTION';
+const CORSET_ACTION_TYPES = KeyMirror({
+  GET_CORSETS: null,
+  DEFAULT_ACTION: null,
+  SET_FILTER: null,
+  INSTALL_CORSETS: null,
+});
+
+export default CORSET_ACTION_TYPES;

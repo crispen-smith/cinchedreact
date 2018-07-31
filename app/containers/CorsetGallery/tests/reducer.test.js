@@ -1,8 +1,38 @@
 import { fromJS } from 'immutable';
+
 import corsetGalleryReducer from '../reducer';
 
-describe('corsetGalleryReducer', () => {
-  it('returns the initial state', () => {
-    expect(corsetGalleryReducer(undefined, {})).toEqual(fromJS({}));
+import * as corsetActions from '../actions';
+
+describe(corsetGalleryReducer, () => {
+  let state;
+
+  beforeAll(() => {
+    state = fromJS({});
+  });
+
+  it('Should return the initial State', () => {
+    const expectedResult = state;
+    expect(corsetGalleryReducer(undefined, {})).toEqual(expectedResult);
+  });
+
+  it('Should handle the setFilter action correctly', () => {
+    const testFilter = 'underbust';
+
+    const filtered = state.set('filter', testFilter);
+
+    expect(
+      corsetGalleryReducer(state, corsetActions.setFilter(testFilter)),
+    ).toEqual(filtered);
+  });
+
+  it('Should handle the installCorsets action correctly', () => {
+    const testCorsets = [{ name: 'first' }, { name: 'second' }];
+
+    const installed = state.setIn(['corsets'], testCorsets);
+
+    expect(
+      corsetGalleryReducer(state, corsetActions.installCorsets(testCorsets)),
+    ).toEqual(installed);
   });
 });
