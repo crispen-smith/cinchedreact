@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CorsetThumbnailComponent /> Renders a BrandBox 1`] = `
+exports[`<CorsetThumbnailComponent /> Renders a Corset Snapshot 1`] = `
 <div
-  className="CorsetThumbnailComponent__CTC-bqQMiC jMdXR"
+  className="CorsetThumbnailComponent__CTC-bqQMiC gizajL"
 >
   <a
-    href="corsets/test"
+    href="/corsets/test"
   >
-    <span>
+    <h2>
       test
-    </span>
+    </h2>
     <img
       alt="test"
-      src="test"
+      src="http://res.cloudinary.com/www-cinchedtight-com/image/upload/v1533177121/test"
     />
     <div
       className="summary"
