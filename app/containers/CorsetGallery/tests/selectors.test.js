@@ -2,7 +2,9 @@ import { fromJS } from 'immutable';
 
 import {
   selectCorsetGalleryDomain,
-  makeSelectCorsetGallery,
+  makeSelectCorsetGallery, // line 22
+  makeSelectCorsetGalleryFilter, // 43
+  makeSelectorFilteredCorsets, // 62
 } from '../selectors';
 
 describe('selectCorsetGalleryDomain', () => {
@@ -38,20 +40,59 @@ describe('makeSelectCorsetGallery', () => {
 });
 
 describe('makeSelectCorsetGalleryFilter', () => {
-  let state;
-
-  beforeAll(() => {
-    state = fromJS({});
-  });
-
   it('Should select the Filter', () => {
-    const corsetGallerySelector = makeSelectCorsetGallery();
+    const state = fromJS({});
+    const filterSelector = makeSelectCorsetGalleryFilter();
 
     const filter = 'all';
     const mockedState = state.set('filter', filter);
     const corsetGalleryState = fromJS({ corsetGallery: mockedState });
-    expect(corsetGallerySelector(corsetGalleryState)).toEqual(
-      mockedState.toJS(),
+    expect(filterSelector(corsetGalleryState)).toEqual(filter);
+  });
+});
+
+describe('makeSelectFilteredCorsets', () => {
+  let state;
+  let mockedState;
+  const filteredCorsetsSelector = makeSelectorFilteredCorsets();
+  const corsets = [
+    { name: 'underbust', type: 'underbust' },
+    { name: 'overbust', type: 'overbust' },
+  ];
+
+  beforeAll(() => {
+    state = fromJS({});
+    mockedState = state.set('corsets', corsets);
+  });
+
+  it('Should select all the corsets when the filter = all', () => {
+    const filter = 'all';
+    mockedState = mockedState.set('filter', filter);
+    const corsetGalleryState = fromJS({ corsetGallery: mockedState });
+    expect(filteredCorsetsSelector(corsetGalleryState)).toEqual(corsets);
+  });
+
+  it('Should only select the overbust corsets when the filter = overbust', () => {
+    const filter = 'overbust';
+
+    mockedState = mockedState.set('filter', filter);
+    const filteredCorsets = corsets.filter(corset => corset.type === filter);
+    const corsetGalleryState = fromJS({ corsetGallery: mockedState });
+
+    expect(filteredCorsetsSelector(corsetGalleryState)).toEqual(
+      filteredCorsets,
+    );
+  });
+
+  it('Should only select the overbust corsets when the filter = underbust', () => {
+    const filter = 'underbust';
+
+    mockedState = mockedState.set('filter', filter);
+    const filteredCorsets = corsets.filter(corset => corset.type === filter);
+    const corsetGalleryState = fromJS({ corsetGallery: mockedState });
+
+    expect(filteredCorsetsSelector(corsetGalleryState)).toEqual(
+      filteredCorsets,
     );
   });
 });

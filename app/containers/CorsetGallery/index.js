@@ -16,7 +16,7 @@ import injectReducer from 'utils/injectReducer';
 import {
   makeSelectCorsetGallery,
   makeSelectCorsetGalleryFilter,
-  makeSelectorFilteredCorsetGallery,
+  makeSelectorFilteredCorsets,
 } from './selectors';
 import { makeSelectLoggedIn } from '../BrandedHeader/selectors';
 import reducer from './reducer';
@@ -101,7 +101,7 @@ const mapStateToProps = createStructuredSelector({
   corsetGallery: makeSelectCorsetGallery(),
   filter: makeSelectCorsetGalleryFilter(),
   loggedIn: makeSelectLoggedIn(),
-  displayCorsets: makeSelectorFilteredCorsetGallery(),
+  displayCorsets: makeSelectorFilteredCorsets(),
 });
 
 function mapDispatchToProps(dispatch) {

@@ -31,15 +31,22 @@ const makeSelectCorsets = () =>
 const makeSelectCorsetGalleryFilter = () =>
   createSelector(selectCorsetGalleryDomain, substate => substate.toJS().filter);
 
-const makeSelectorFilteredCorsetGallery = () =>
-  createSelector(
-    [makeSelectCorsets, makeSelectCorsetGalleryFilter],
-    () => [],
-    // (corsets, filter) =>
-    //   filter === 'all'
-    //     ? corsets
-    //     : corsets.filter(corset => corset.type === filter),
+const makeSelectorFilteredCorsets = () => {
+  const selectCorsets = makeSelectCorsets();
+  const selectFilter = makeSelectCorsetGalleryFilter();
+
+  return createSelector(
+    [selectCorsets, selectFilter],
+    (corsets, filter) =>
+      /* eslint-disable */
+    corsets.filter ?
+      filter === 'all'
+        ? corsets
+        : corsets.filter(corset => corset.type === filter)
+      : [],
+      /* eslint-enable */
   );
+};
 
 export default makeSelectCorsetGallery;
 
@@ -47,6 +54,5 @@ export {
   makeSelectCorsetGallery,
   selectCorsetGalleryDomain,
   makeSelectCorsetGalleryFilter,
-  makeSelectCorsets,
-  makeSelectorFilteredCorsetGallery,
+  makeSelectorFilteredCorsets,
 };
