@@ -1,0 +1,514 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CorsetGallery /> Renders a Corset Snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "injectedReducers": Object {
+        "corsetGallery": [Function],
+      },
+      "injectedSagas": Object {
+        "corsetGallery": Object {
+          "mode": "@@saga-injector/restart-on-remount",
+          "saga": [Function],
+          "task": Object {
+            "@@redux-saga/TASK": true,
+            "cancel": [Function],
+            "cont": undefined,
+            "done": Promise {},
+            "error": [Function],
+            "id": 1,
+            "isAborted": [Function],
+            "isCancelled": [Function],
+            "isRunning": [Function],
+            "joiners": null,
+            "name": "defaultSaga",
+            "result": [Function],
+            "setContext": [Function],
+          },
+        },
+      },
+      "replaceReducer": [Function],
+      "runSaga": [Function],
+      "subscribe": [Function],
+      Symbol(Symbol.observable): [Function],
+    }
+  }
+>
+  <withReducer(withSaga(Connect(CorsetGallery)))
+    match={
+      Object {
+        "params": Object {
+          "filter": "all",
+        },
+      }
+    }
+  >
+    <withSaga(Connect(CorsetGallery))
+      match={
+        Object {
+          "params": Object {
+            "filter": "all",
+          },
+        }
+      }
+    >
+      <Connect(CorsetGallery)
+        match={
+          Object {
+            "params": Object {
+              "filter": "all",
+            },
+          }
+        }
+      >
+        <CorsetGallery
+          corsetGallery={
+            Object {
+              "filter": "all",
+            }
+          }
+          dispatch={[Function]}
+          displayCorsets={Array []}
+          filter="all"
+          loggedIn={true}
+          match={
+            Object {
+              "params": Object {
+                "filter": "all",
+              },
+            }
+          }
+        >
+          <div>
+            <HelmetWrapper
+              defer={true}
+              encodeSpecialCharacters={true}
+            >
+              <SideEffect(NullComponent)
+                defer={true}
+                encodeSpecialCharacters={true}
+                meta={
+                  Array [
+                    Object {
+                      "content": "All Corsets at Cinched Tight",
+                      "name": "description",
+                    },
+                  ]
+                }
+                title="All Corsets at Cinched Tight"
+                titleAttributes={Object {}}
+              >
+                <NullComponent
+                  defer={true}
+                  encodeSpecialCharacters={true}
+                  meta={
+                    Array [
+                      Object {
+                        "content": "All Corsets at Cinched Tight",
+                        "name": "description",
+                      },
+                    ]
+                  }
+                  title="All Corsets at Cinched Tight"
+                  titleAttributes={Object {}}
+                />
+              </SideEffect(NullComponent)>
+            </HelmetWrapper>
+            <ProductStyling__ProductH1>
+              <h1
+                className="ProductStyling__ProductH1-cfShhD ivnvGw"
+              >
+                All
+                 Corsets
+              </h1>
+            </ProductStyling__ProductH1>
+            <ProductStyling__ProductGrid>
+              <div
+                className="ProductStyling__ProductGrid-JLKAK eCTcgP"
+              >
+                <div>
+                   
+                </div>
+                <CorsetThumbnailComponent
+                  CorsetAlt="Create New"
+                  CorsetName="Create"
+                  CorsetThumbnailSource="sample.jpg"
+                  Summary="Create New"
+                >
+                  <CorsetThumbnailComponent__CTC>
+                    <div
+                      className="CorsetThumbnailComponent__CTC-bqQMiC gizajL"
+                    >
+                      <a
+                        href="/corsets/Create"
+                      >
+                        <h2>
+                          Create
+                        </h2>
+                        <img
+                          alt="Create New"
+                          src="http://res.cloudinary.com/www-cinchedtight-com/image/upload/v1533177121/sample.jpg"
+                        />
+                        <div
+                          className="summary"
+                        >
+                          Create New
+                        </div>
+                      </a>
+                    </div>
+                  </CorsetThumbnailComponent__CTC>
+                </CorsetThumbnailComponent>
+              </div>
+            </ProductStyling__ProductGrid>
+          </div>
+        </CorsetGallery>
+      </Connect(CorsetGallery)>
+    </withSaga(Connect(CorsetGallery))>
+  </withReducer(withSaga(Connect(CorsetGallery)))>
+</Provider>
+`;
+
+exports[`<CorsetGallery /> Renders a Corset Snapshot when LoggedIn = True 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "injectedReducers": Object {
+        "corsetGallery": [Function],
+      },
+      "injectedSagas": Object {
+        "corsetGallery": Object {
+          "mode": "@@saga-injector/restart-on-remount",
+          "saga": [Function],
+          "task": Object {
+            "@@redux-saga/TASK": true,
+            "cancel": [Function],
+            "cont": undefined,
+            "done": Promise {},
+            "error": [Function],
+            "id": 1,
+            "isAborted": [Function],
+            "isCancelled": [Function],
+            "isRunning": [Function],
+            "joiners": null,
+            "name": "defaultSaga",
+            "result": [Function],
+            "setContext": [Function],
+          },
+        },
+      },
+      "replaceReducer": [Function],
+      "runSaga": [Function],
+      "subscribe": [Function],
+      Symbol(Symbol.observable): [Function],
+    }
+  }
+>
+  <withReducer(withSaga(Connect(CorsetGallery)))
+    match={
+      Object {
+        "params": Object {
+          "filter": "all",
+        },
+      }
+    }
+  >
+    <withSaga(Connect(CorsetGallery))
+      match={
+        Object {
+          "params": Object {
+            "filter": "all",
+          },
+        }
+      }
+    >
+      <Connect(CorsetGallery)
+        match={
+          Object {
+            "params": Object {
+              "filter": "all",
+            },
+          }
+        }
+      >
+        <CorsetGallery
+          corsetGallery={
+            Object {
+              "filter": "all",
+            }
+          }
+          dispatch={[Function]}
+          displayCorsets={Array []}
+          filter="all"
+          loggedIn={true}
+          match={
+            Object {
+              "params": Object {
+                "filter": "all",
+              },
+            }
+          }
+        >
+          <div>
+            <HelmetWrapper
+              defer={true}
+              encodeSpecialCharacters={true}
+            >
+              <SideEffect(NullComponent)
+                defer={true}
+                encodeSpecialCharacters={true}
+                meta={
+                  Array [
+                    Object {
+                      "content": "All Corsets at Cinched Tight",
+                      "name": "description",
+                    },
+                  ]
+                }
+                title="All Corsets at Cinched Tight"
+                titleAttributes={Object {}}
+              >
+                <NullComponent
+                  defer={true}
+                  encodeSpecialCharacters={true}
+                  meta={
+                    Array [
+                      Object {
+                        "content": "All Corsets at Cinched Tight",
+                        "name": "description",
+                      },
+                    ]
+                  }
+                  title="All Corsets at Cinched Tight"
+                  titleAttributes={Object {}}
+                />
+              </SideEffect(NullComponent)>
+            </HelmetWrapper>
+            <ProductStyling__ProductH1>
+              <h1
+                className="ProductStyling__ProductH1-cfShhD ivnvGw"
+              >
+                All
+                 Corsets
+              </h1>
+            </ProductStyling__ProductH1>
+            <ProductStyling__ProductGrid>
+              <div
+                className="ProductStyling__ProductGrid-JLKAK eCTcgP"
+              >
+                <div>
+                   
+                </div>
+                <CorsetThumbnailComponent
+                  CorsetAlt="Create New"
+                  CorsetName="Create"
+                  CorsetThumbnailSource="sample.jpg"
+                  Summary="Create New"
+                >
+                  <CorsetThumbnailComponent__CTC>
+                    <div
+                      className="CorsetThumbnailComponent__CTC-bqQMiC gizajL"
+                    >
+                      <a
+                        href="/corsets/Create"
+                      >
+                        <h2>
+                          Create
+                        </h2>
+                        <img
+                          alt="Create New"
+                          src="http://res.cloudinary.com/www-cinchedtight-com/image/upload/v1533177121/sample.jpg"
+                        />
+                        <div
+                          className="summary"
+                        >
+                          Create New
+                        </div>
+                      </a>
+                    </div>
+                  </CorsetThumbnailComponent__CTC>
+                </CorsetThumbnailComponent>
+              </div>
+            </ProductStyling__ProductGrid>
+          </div>
+        </CorsetGallery>
+      </Connect(CorsetGallery)>
+    </withSaga(Connect(CorsetGallery))>
+  </withReducer(withSaga(Connect(CorsetGallery)))>
+</Provider>
+`;
+
+exports[`<CorsetGallery /> Renders a Corset Snapshot when LoggedIn = false 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "injectedReducers": Object {
+        "corsetGallery": [Function],
+      },
+      "injectedSagas": Object {
+        "corsetGallery": Object {
+          "mode": "@@saga-injector/restart-on-remount",
+          "saga": [Function],
+          "task": Object {
+            "@@redux-saga/TASK": true,
+            "cancel": [Function],
+            "cont": undefined,
+            "done": Promise {},
+            "error": [Function],
+            "id": 2,
+            "isAborted": [Function],
+            "isCancelled": [Function],
+            "isRunning": [Function],
+            "joiners": null,
+            "name": "defaultSaga",
+            "result": [Function],
+            "setContext": [Function],
+          },
+        },
+      },
+      "replaceReducer": [Function],
+      "runSaga": [Function],
+      "subscribe": [Function],
+      Symbol(Symbol.observable): [Function],
+    }
+  }
+>
+  <withReducer(withSaga(Connect(CorsetGallery)))
+    match={
+      Object {
+        "params": Object {
+          "filter": "all",
+        },
+      }
+    }
+  >
+    <withSaga(Connect(CorsetGallery))
+      match={
+        Object {
+          "params": Object {
+            "filter": "all",
+          },
+        }
+      }
+    >
+      <Connect(CorsetGallery)
+        match={
+          Object {
+            "params": Object {
+              "filter": "all",
+            },
+          }
+        }
+      >
+        <CorsetGallery
+          corsetGallery={
+            Object {
+              "filter": "all",
+            }
+          }
+          dispatch={[Function]}
+          displayCorsets={Array []}
+          filter="all"
+          loggedIn={true}
+          match={
+            Object {
+              "params": Object {
+                "filter": "all",
+              },
+            }
+          }
+        >
+          <div>
+            <HelmetWrapper
+              defer={true}
+              encodeSpecialCharacters={true}
+            >
+              <SideEffect(NullComponent)
+                defer={true}
+                encodeSpecialCharacters={true}
+                meta={
+                  Array [
+                    Object {
+                      "content": "All Corsets at Cinched Tight",
+                      "name": "description",
+                    },
+                  ]
+                }
+                title="All Corsets at Cinched Tight"
+                titleAttributes={Object {}}
+              >
+                <NullComponent
+                  defer={true}
+                  encodeSpecialCharacters={true}
+                  meta={
+                    Array [
+                      Object {
+                        "content": "All Corsets at Cinched Tight",
+                        "name": "description",
+                      },
+                    ]
+                  }
+                  title="All Corsets at Cinched Tight"
+                  titleAttributes={Object {}}
+                />
+              </SideEffect(NullComponent)>
+            </HelmetWrapper>
+            <ProductStyling__ProductH1>
+              <h1
+                className="ProductStyling__ProductH1-cfShhD ivnvGw"
+              >
+                All
+                 Corsets
+              </h1>
+            </ProductStyling__ProductH1>
+            <ProductStyling__ProductGrid>
+              <div
+                className="ProductStyling__ProductGrid-JLKAK eCTcgP"
+              >
+                <div>
+                   
+                </div>
+                <CorsetThumbnailComponent
+                  CorsetAlt="Create New"
+                  CorsetName="Create"
+                  CorsetThumbnailSource="sample.jpg"
+                  Summary="Create New"
+                >
+                  <CorsetThumbnailComponent__CTC>
+                    <div
+                      className="CorsetThumbnailComponent__CTC-bqQMiC gizajL"
+                    >
+                      <a
+                        href="/corsets/Create"
+                      >
+                        <h2>
+                          Create
+                        </h2>
+                        <img
+                          alt="Create New"
+                          src="http://res.cloudinary.com/www-cinchedtight-com/image/upload/v1533177121/sample.jpg"
+                        />
+                        <div
+                          className="summary"
+                        >
+                          Create New
+                        </div>
+                      </a>
+                    </div>
+                  </CorsetThumbnailComponent__CTC>
+                </CorsetThumbnailComponent>
+              </div>
+            </ProductStyling__ProductGrid>
+          </div>
+        </CorsetGallery>
+      </Connect(CorsetGallery)>
+    </withSaga(Connect(CorsetGallery))>
+  </withReducer(withSaga(Connect(CorsetGallery)))>
+</Provider>
+`;

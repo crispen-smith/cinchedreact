@@ -13,10 +13,18 @@ import { compose } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-import makeSelectCorsetGallery from './selectors';
+import {
+  makeSelectCorsetGallery,
+  makeSelectCorsetGalleryFilter,
+  makeSelectorFilteredCorsetGallery,
+} from './selectors';
+import { makeSelectLoggedIn } from '../BrandedHeader/selectors';
 import reducer from './reducer';
 import saga from './saga';
 import * as actions from './actions';
+
+import CorsetThumbnailComponent from '../../components/CorsetThumbnailComponent';
+import { ProductGrid, ProductH1 } from '../../resources/ProductStyling';
 
 /* eslint-disable react/prefer-stateless-function */
 export class CorsetGallery extends React.Component {
@@ -29,12 +37,38 @@ export class CorsetGallery extends React.Component {
   }
 
   render() {
-    const filter = this.props.corsetGallery.filter
-      ? this.props.corsetGallery.filter
-      : '';
+    const { filter } = this.props;
 
     const displayFilter =
-      filter.substring(0, 1).toUpperCase() + filter.substring(1, filter.length);
+      filter && filter.substring
+        ? filter.substring(0, 1).toUpperCase() +
+          filter.substring(1, filter.length)
+        : '';
+
+    const displayCorsets =
+      this.props.displayCorsets.length >= 1 ? (
+        this.props.displayCorsets.map(corset => (
+          <CorsetThumbnailComponent
+            CorsetName={corset.name}
+            CorsetAlt="Create New"
+            CorsetThumbnailSource="sample.jpg"
+            Summary="Create New"
+          />
+        ))
+      ) : (
+        <div>&nbsp;</div>
+      );
+
+    const CreateThumbnail = this.props.loggedIn ? (
+      <CorsetThumbnailComponent
+        CorsetName="Create"
+        CorsetAlt="Create New"
+        CorsetThumbnailSource="sample.jpg"
+        Summary="Create New"
+      />
+    ) : (
+      <div>&nbsp;</div>
+    );
 
     return (
       <div>
@@ -45,6 +79,11 @@ export class CorsetGallery extends React.Component {
             content={`${displayFilter} Corsets at Cinched Tight`}
           />
         </Helmet>
+        <ProductH1>{displayFilter} Corsets</ProductH1>
+        <ProductGrid>
+          {displayCorsets}
+          {CreateThumbnail}
+        </ProductGrid>
       </div>
     );
   }
@@ -53,11 +92,16 @@ export class CorsetGallery extends React.Component {
 CorsetGallery.propTypes = {
   dispatch: PropTypes.func.isRequired,
   match: PropTypes.object.isRequired,
-  corsetGallery: PropTypes.object.isRequired,
+  displayCorsets: PropTypes.array,
+  filter: PropTypes.string,
+  loggedIn: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
   corsetGallery: makeSelectCorsetGallery(),
+  filter: makeSelectCorsetGalleryFilter(),
+  loggedIn: makeSelectLoggedIn(),
+  displayCorsets: makeSelectorFilteredCorsetGallery(),
 });
 
 function mapDispatchToProps(dispatch) {

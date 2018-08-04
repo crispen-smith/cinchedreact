@@ -19,5 +19,34 @@ const selectCorsetGalleryDomain = state =>
 const makeSelectCorsetGallery = () =>
   createSelector(selectCorsetGalleryDomain, substate => substate.toJS());
 
+const makeSelectCorsets = () =>
+  createSelector(
+    selectCorsetGalleryDomain,
+    substate =>
+      typeof substate.toJS().corsets === 'object'
+        ? substate.toJS().corsets
+        : [],
+  );
+
+const makeSelectCorsetGalleryFilter = () =>
+  createSelector(selectCorsetGalleryDomain, substate => substate.toJS().filter);
+
+const makeSelectorFilteredCorsetGallery = () =>
+  createSelector(
+    [makeSelectCorsets, makeSelectCorsetGalleryFilter],
+    () => [],
+    // (corsets, filter) =>
+    //   filter === 'all'
+    //     ? corsets
+    //     : corsets.filter(corset => corset.type === filter),
+  );
+
 export default makeSelectCorsetGallery;
-export { selectCorsetGalleryDomain };
+
+export {
+  makeSelectCorsetGallery,
+  selectCorsetGalleryDomain,
+  makeSelectCorsetGalleryFilter,
+  makeSelectCorsets,
+  makeSelectorFilteredCorsetGallery,
+};
