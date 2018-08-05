@@ -20,39 +20,27 @@ describe('CorsetCreator actions', () => {
     });
   });
 
+  describe('IsSaved Action', () => {
+    it('has a type of actionTypes.isSaved', () => {
+      const expected = {
+        type: actionTypes.isSaved,
+      };
+      expect(actions.isSaved()).toEqual(expected);
+    });
+  });
+
   describe('Create Action', () => {
     it('has a type of actionTypes.create', () => {
+      const corset = { name: 'test', type: 'underbust' };
       const expected = {
         type: actionTypes.create,
+        corset,
       };
-      expect(actions.create()).toEqual(expected);
+      expect(actions.create(corset)).toEqual(expected);
     });
   });
 
-  describe('SetName Action', () => {
-    it('has a type of actionTypes.setName', () => {
-      const name = 'test';
-      const expected = {
-        type: actionTypes.setName,
-        name,
-      };
-      expect(actions.setName(name)).toEqual(expected);
-    });
-  });
-
-  describe('SetType Action', () => {
-    it('has a type of actionTypes.setType', () => {
-      const corsetType = 'underbust';
-
-      const expected = {
-        type: actionTypes.setType,
-        corsetType,
-      };
-      expect(actions.setType(corsetType)).toEqual(expected);
-    });
-  });
-
-  describe('SetDesscription Action', () => {
+  describe('SetDescription Action', () => {
     it('has a type of actionTypes.setDescription', () => {
       const description = 'TEST DESCRIPTION';
       const expected = {
@@ -65,23 +53,23 @@ describe('CorsetCreator actions', () => {
 
   describe('SetPrimaryImage Action', () => {
     it('has a type of actionTypes.setPrimaryImage', () => {
-      const primaryImageURL = 'test';
+      const image = 'test';
       const expected = {
         type: actionTypes.setPrimaryImage,
-        primaryImageURL,
+        image,
       };
-      expect(actions.setPrimaryImage(primaryImageURL)).toEqual(expected);
+      expect(actions.setPrimaryImage(image)).toEqual(expected);
     });
   });
 
   describe('AddImage Action', () => {
     it('has a type of actionTypes.addImage', () => {
-      const imageURL = 'test';
+      const image = 'test';
       const expected = {
         type: actionTypes.addImage,
-        imageURL,
+        image,
       };
-      expect(actions.addImage(imageURL)).toEqual(expected);
+      expect(actions.addImage(image)).toEqual(expected);
     });
   });
 
@@ -101,8 +89,6 @@ describe('CorsetCreator actions', () => {
 // X   default: null,
 // X  save: null,
 // X  create: null,
-// X  setName: null,
-// X  setType: null,
 // X  setDescription: null,
 // X  setPrimaryImage: null,
 // X  addImage: null,

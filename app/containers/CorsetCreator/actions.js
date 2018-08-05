@@ -25,17 +25,9 @@ export function save() {
   };
 }
 
-export function setName(name) {
+export function isSaved() {
   return {
-    type: actionTypes.setName,
-    name,
-  };
-}
-
-export function setType(corsetType) {
-  return {
-    type: actionTypes.setType,
-    corsetType,
+    type: actionTypes.isSaved,
   };
 }
 
@@ -46,17 +38,19 @@ export function setDescription(description) {
   };
 }
 
-export function setPrimaryImage(primaryImageURL) {
+export function setPrimaryImage(image) {
+  // using an image object to allow for passing additional values
   return {
     type: actionTypes.setPrimaryImage,
-    primaryImageURL,
+    image,
   };
 }
 
-export function addImage(imageURL) {
+export function addImage(image) {
+  // using an image object to allow for passing additional values
   return {
     type: actionTypes.addImage,
-    imageURL,
+    image,
   };
 }
 
