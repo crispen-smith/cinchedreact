@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SubmitButton /> Renders a BrandBox 1`] = `
+<input
+  className="SubmitButton__SB-cMjXsV bpCIXX"
+  type="submit"
+  value="test"
+/>
+`;
