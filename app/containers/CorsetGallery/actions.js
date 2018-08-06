@@ -12,6 +12,12 @@ export function defaultAction() {
   };
 }
 
+export function resetAction() {
+  return {
+    type: CORSET_ACTION_TYPES.RESET,
+  };
+}
+
 export function setFilter(filter) {
   return {
     type: CORSET_ACTION_TYPES.SET_FILTER,

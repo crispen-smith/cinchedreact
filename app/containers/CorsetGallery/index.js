@@ -35,6 +35,9 @@ export class CorsetGallery extends React.Component {
     const setFilterAction = actions.setFilter(filter);
     props.dispatch(setFilterAction);
   }
+  componentDidMount() {
+    this.props.dispatch(actions.resetAction());
+  }
 
   render() {
     const { filter } = this.props;
