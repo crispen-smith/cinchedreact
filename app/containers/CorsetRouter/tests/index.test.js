@@ -42,7 +42,7 @@ describe('<CorsetRouter />', () => {
     expect(wrapper.find('CorsetGallery')).toHaveLength(1);
   });
 
-  it('Renders the gallery when the path is /corsets/all', () => {
+  it('Renders the gallery when the path is /corsets/underbust', () => {
     match = ['/corsets/underbust'];
 
     const wrapper = mount(
@@ -56,8 +56,22 @@ describe('<CorsetRouter />', () => {
     expect(wrapper.find('CorsetGallery')).toHaveLength(1);
   });
 
-  it('Renders a Corset when the path is /corsets/test_corset', () => {
-    match = ['/corsets/test_corset'];
+  it('Renders a Corset when the path is /corsets/underbust/test_corset', () => {
+    match = ['/corsets/underbust/test_corset'];
+
+    const wrapper = mount(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={match}>
+          <CorsetRouter />
+        </MemoryRouter>
+      </Provider>,
+    );
+
+    expect(wrapper.find('Corset')).toHaveLength(1);
+  });
+
+  it('Renders a Corset when the path is /corsets/overbust/test_corset', () => {
+    match = ['/corsets/overbust/test_corset'];
 
     const wrapper = mount(
       <Provider store={store}>
