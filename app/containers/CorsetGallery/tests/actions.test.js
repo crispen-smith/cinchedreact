@@ -1,4 +1,9 @@
-import { defaultAction, setFilter, installCorsets } from '../actions';
+import {
+  defaultAction,
+  setFilter,
+  installCorsets,
+  resetAction,
+} from '../actions';
 import CORSET_ACTION_TYPES from '../constants';
 
 describe('CorsetGallery actions', () => {
@@ -29,6 +34,14 @@ describe('CorsetGallery actions', () => {
         corsets,
       };
       expect(installCorsets(corsets)).toEqual(expected);
+    });
+  });
+  describe('restAction', () => {
+    it('has a type of RESET', () => {
+      const expected = {
+        type: CORSET_ACTION_TYPES.RESET,
+      };
+      expect(resetAction()).toEqual(expected);
     });
   });
 });

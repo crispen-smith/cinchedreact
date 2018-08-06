@@ -2,9 +2,10 @@ import { fromJS } from 'immutable';
 
 import {
   selectCorsetGalleryDomain,
-  makeSelectCorsetGallery, // line 22
-  makeSelectCorsetGalleryFilter, // 43
-  makeSelectorFilteredCorsets, // 62
+  makeSelectCorsetGallery, // line 23
+  makeSelectCorsetGalleryFilter, // 44
+  makeSelectorFilteredCorsets, // 63
+  makeSelectCurrentCorset, // 101
 } from '../selectors';
 
 describe('selectCorsetGalleryDomain', () => {
@@ -84,7 +85,7 @@ describe('makeSelectFilteredCorsets', () => {
     );
   });
 
-  it('Should only select the overbust corsets when the filter = underbust', () => {
+  it('Should only select the underbust corsets when the filter = underbust', () => {
     const filter = 'underbust';
 
     mockedState = mockedState.set('filter', filter);
@@ -94,5 +95,17 @@ describe('makeSelectFilteredCorsets', () => {
     expect(filteredCorsetsSelector(corsetGalleryState)).toEqual(
       filteredCorsets,
     );
+  });
+});
+
+describe('makeSelectCorsetGalleryFilter', () => {
+  it('Should select the currentCorset', () => {
+    const state = fromJS({});
+    const currentCorsetSelector = makeSelectCurrentCorset();
+
+    const currentCorset = 'test';
+    const mockedState = state.set('currentCorset', currentCorset);
+    const corsetGalleryState = fromJS({ corsetGallery: mockedState });
+    expect(currentCorsetSelector(corsetGalleryState)).toEqual(currentCorset);
   });
 });

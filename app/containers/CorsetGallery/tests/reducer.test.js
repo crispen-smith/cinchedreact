@@ -35,4 +35,12 @@ describe(corsetGalleryReducer, () => {
       corsetGalleryReducer(state, corsetActions.installCorsets(testCorsets)),
     ).toEqual(installed);
   });
+  it('Should handle the reset action correctly', () => {
+    state.set('currentCorset', 'test');
+
+    const expectedState = fromJS({});
+    expect(corsetGalleryReducer(state, corsetActions.resetAction())).toEqual(
+      expectedState,
+    );
+  });
 });
