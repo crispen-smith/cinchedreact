@@ -31,7 +31,7 @@ class DropDown extends React.PureComponent {
 }
 
 DropDown.propTypes = {
-  options: PropTypes.array.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
   inputLabel: PropTypes.string.isRequired,
   inputName: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
