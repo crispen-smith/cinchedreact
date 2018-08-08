@@ -140,6 +140,14 @@ describe('corsetCreatorReducer', () => {
     const action = actions.addImage(primaryImage);
     expect(corsetCreatorReducer(state, action)).toEqual(expectedState);
   });
+
+  // Reset
+  it('sets the currentCorset to null when it recieves the reset action', () => {
+    const state = fromJS({ currentCorset: 'Test' });
+    const expectedState = state.set('currentCorset', null);
+    const action = actions.reset();
+    expect(corsetCreatorReducer(state, action)).toEqual(expectedState);
+  });
 });
 
 //  X default
@@ -150,3 +158,4 @@ describe('corsetCreatorReducer', () => {
 //  X setPrimaryImage
 //  X addImage
 //  X setPrice
+//  X Reset

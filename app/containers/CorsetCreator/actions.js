@@ -61,6 +61,12 @@ export function setPrice(price) {
   };
 }
 
+export function reset() {
+  return {
+    type: actionTypes.reset,
+  };
+}
+
 /*
   All Corsets must be loaded to corsetGallery 
 */

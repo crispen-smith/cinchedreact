@@ -30,6 +30,11 @@ function corsetCreatorReducer(state = initialState, action) {
       return addImage(state, action);
     case actionTypes.setPrice:
       return setPrice(state, action);
+    case actionTypes.reset:
+      return fromJS({
+        ...state.toJS(),
+        currentCorset: null,
+      });
     case actionTypes.default:
       return state;
     default:

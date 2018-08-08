@@ -74,13 +74,22 @@ describe('CorsetCreator actions', () => {
   });
 
   describe('SetPrice Action', () => {
-    it('has a type of actionTypes.setPrice', () => {
+    it('has a type of actionTypes.setPrice and contains the passed-in price', () => {
       const price = 1;
       const expected = {
         type: actionTypes.setPrice,
         price,
       };
       expect(actions.setPrice(price)).toEqual(expected);
+    });
+  });
+
+  describe('rest Action', () => {
+    it('has a type of actionTypes.reset', () => {
+      const expected = {
+        type: actionTypes.reset,
+      };
+      expect(actions.reset()).toEqual(expected);
     });
   });
 });
