@@ -12,11 +12,22 @@ export const initialState = fromJS({});
 function corsetGalleryReducer(state = initialState, action) {
   switch (action.type) {
     case CORSET_ACTION_TYPES.SET_FILTER:
-      return state.set('filter', action.filter);
+      return fromJS({
+        ...state.toJS(),
+        filter: action.filter,
+      });
     case CORSET_ACTION_TYPES.GET_CORSETS:
       return state;
     case CORSET_ACTION_TYPES.INSTALL_CORSETS:
-      return state.setIn(['corsets'], action.corsets);
+      return fromJS({
+        ...state.toJS(),
+        corsets: action.corsets,
+      });
+    case CORSET_ACTION_TYPES.RESET:
+      return fromJS({
+        ...state.toJS(),
+        currentCorset: '',
+      });
     default:
       return state;
   }
