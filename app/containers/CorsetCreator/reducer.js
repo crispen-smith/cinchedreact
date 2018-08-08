@@ -40,8 +40,6 @@ function corsetCreatorReducer(state = initialState, action) {
 const createCorset = (state, action) => {
   const newState = state.toJS();
   if (!newState.corsets) newState.corsets = [];
-  console.log('INSIDE CORSET CREATOR'); // eslint-disable-line no-console
-  console.log(action.corset); // eslint-disable-line no-console
   newState.corsets.push(action.corset);
   newState.currentCorset = action.corset.name;
   return fromJS(newState);
