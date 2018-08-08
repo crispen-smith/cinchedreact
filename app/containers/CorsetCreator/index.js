@@ -31,7 +31,7 @@ import SubmitButton from '../../components/SubmitButton';
 export class CorsetCreator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { productName: '', productType: '' };
+    this.state = { productName: '', productType: 'overbust' };
   }
 
   render() {
@@ -52,7 +52,6 @@ export class CorsetCreator extends React.Component {
       };
       submitResponse = e => {
         e.preventDefault();
-        alert('SUBMITTING'); // eslint-disable-line no-alert
         const action = actions.create({
           name: this.state.productName,
           type: this.state.productType,
@@ -106,6 +105,7 @@ export class CorsetCreator extends React.Component {
           />
         </Helmet>
         {form}
+        <a href="/corsets/all">Gallery</a>
       </div>
     );
   }
