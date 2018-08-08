@@ -56,6 +56,7 @@ export class CorsetGallery extends React.Component {
             CorsetAlt="Create New"
             CorsetThumbnailSource="sample.jpg"
             Summary="Create New"
+            key={corset.name}
           />
         ))
       ) : (
