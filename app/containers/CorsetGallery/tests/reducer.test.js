@@ -29,16 +29,16 @@ describe(corsetGalleryReducer, () => {
   it('Should handle the installCorsets action correctly', () => {
     const testCorsets = [{ name: 'first' }, { name: 'second' }];
 
-    const installed = state.setIn(['corsets'], testCorsets);
+    const expectedState = fromJS({ corsets: testCorsets });
 
     expect(
       corsetGalleryReducer(state, corsetActions.installCorsets(testCorsets)),
-    ).toEqual(installed);
+    ).toEqual(expectedState);
   });
   it('Should handle the reset action correctly', () => {
     state.set('currentCorset', 'test');
 
-    const expectedState = fromJS({});
+    const expectedState = fromJS({ currentCorset: '' });
     expect(corsetGalleryReducer(state, corsetActions.resetAction())).toEqual(
       expectedState,
     );
