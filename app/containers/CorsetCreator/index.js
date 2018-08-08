@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
+
 import { compose } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
@@ -26,12 +27,17 @@ import FormComponent from '../../components/FormComponent';
 import NameBox from '../../components/NameBox';
 import DropDown from '../../components/DropDown';
 import SubmitButton from '../../components/SubmitButton';
+import { resetAction } from '../CorsetGallery/actions';
 
 /* eslint-disable react/prefer-stateless-function */
 export class CorsetCreator extends React.Component {
   constructor(props) {
     super(props);
     this.state = { productName: '', productType: 'overbust' };
+  }
+
+  componentWillUnmount() {
+    this.props.dispatch(resetAction());
   }
 
   render() {
@@ -105,7 +111,7 @@ export class CorsetCreator extends React.Component {
           />
         </Helmet>
         {form}
-        <a href="/corsets/all">Gallery</a>
+        <a href="/corsets/all">Gallery</a>lj
       </div>
     );
   }

@@ -141,7 +141,7 @@ exports[`<CorsetGallery /> Renders a Corset Snapshot when LoggedIn = True 1`] = 
                 >
                   <CorsetThumbnailComponent__CTC>
                     <div
-                      className="CorsetThumbnailComponent__CTC-bqQMiC gizajL"
+                      className="CorsetThumbnailComponent__CTC-bqQMiC iMVBHu"
                     >
                       <a
                         href="/corsets/Create"
@@ -313,7 +313,7 @@ exports[`<CorsetGallery /> Renders a Corset Snapshot when LoggedIn = false 1`] =
                 >
                   <CorsetThumbnailComponent__CTC>
                     <div
-                      className="CorsetThumbnailComponent__CTC-bqQMiC gizajL"
+                      className="CorsetThumbnailComponent__CTC-bqQMiC iMVBHu"
                     >
                       <a
                         href="/corsets/Create"

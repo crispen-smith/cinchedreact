@@ -16,6 +16,7 @@ const CTC = styled.div`
   flex: 0 1 auto;
   align-self: flex-start;
   border: 1px solid rgba(0, 0, 0, 0);
+  text-align: center;
 
   &:hover {
     background-color: #ffffff;
@@ -23,10 +24,6 @@ const CTC = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
   }
-
-  text-align: center;
-  flex: 0 1 auto;
-  margin: 1rem;
 
   a {
     border: none;
