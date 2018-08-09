@@ -12,7 +12,6 @@ import { createStructuredSelector } from 'reselect';
 
 import { compose } from 'redux';
 
-import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import {
   makeSelectCorsetGallery,
