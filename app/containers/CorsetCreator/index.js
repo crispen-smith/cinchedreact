@@ -22,7 +22,6 @@ import {
 import { makeSelectLoggedIn } from '../BrandedHeader/selectors';
 import reducer from './reducer';
 import * as actions from './actions';
-import saga from './saga';
 import FormComponent from '../../components/FormComponent';
 import NameBox from '../../components/NameBox';
 import DropDown from '../../components/DropDown';
@@ -146,10 +145,8 @@ const withConnect = connect(
 );
 
 const withReducer = injectReducer({ key: 'corsetGallery', reducer });
-const withSaga = injectSaga({ key: 'corsetGallery', saga });
 
 export default compose(
   withReducer,
-  withSaga,
   withConnect,
 )(CorsetCreator);

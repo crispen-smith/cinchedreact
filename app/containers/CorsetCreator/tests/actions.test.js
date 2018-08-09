@@ -11,24 +11,6 @@ describe('CorsetCreator actions', () => {
     });
   });
 
-  describe('Save Action', () => {
-    it('has a type of actionTypes.save', () => {
-      const expected = {
-        type: actionTypes.save,
-      };
-      expect(actions.save()).toEqual(expected);
-    });
-  });
-
-  describe('IsSaved Action', () => {
-    it('has a type of actionTypes.isSaved', () => {
-      const expected = {
-        type: actionTypes.isSaved,
-      };
-      expect(actions.isSaved()).toEqual(expected);
-    });
-  });
-
   describe('Create Action', () => {
     it('has a type of actionTypes.create', () => {
       const corset = { name: 'test', type: 'underbust' };
@@ -39,67 +21,4 @@ describe('CorsetCreator actions', () => {
       expect(actions.create(corset)).toEqual(expected);
     });
   });
-
-  describe('SetDescription Action', () => {
-    it('has a type of actionTypes.setDescription', () => {
-      const description = 'TEST DESCRIPTION';
-      const expected = {
-        type: actionTypes.setDescription,
-        description,
-      };
-      expect(actions.setDescription(description)).toEqual(expected);
-    });
-  });
-
-  describe('SetPrimaryImage Action', () => {
-    it('has a type of actionTypes.setPrimaryImage', () => {
-      const image = 'test';
-      const expected = {
-        type: actionTypes.setPrimaryImage,
-        image,
-      };
-      expect(actions.setPrimaryImage(image)).toEqual(expected);
-    });
-  });
-
-  describe('AddImage Action', () => {
-    it('has a type of actionTypes.addImage', () => {
-      const image = 'test';
-      const expected = {
-        type: actionTypes.addImage,
-        image,
-      };
-      expect(actions.addImage(image)).toEqual(expected);
-    });
-  });
-
-  describe('SetPrice Action', () => {
-    it('has a type of actionTypes.setPrice and contains the passed-in price', () => {
-      const price = 1;
-      const expected = {
-        type: actionTypes.setPrice,
-        price,
-      };
-      expect(actions.setPrice(price)).toEqual(expected);
-    });
-  });
-
-  describe('rest Action', () => {
-    it('has a type of actionTypes.reset', () => {
-      const expected = {
-        type: actionTypes.reset,
-      };
-      expect(actions.reset()).toEqual(expected);
-    });
-  });
 });
-
-// const actionTypes = keymirror({
-// X   default: null,
-// X  save: null,
-// X  create: null,
-// X  setDescription: null,
-// X  setPrimaryImage: null,
-// X  addImage: null,
-// X  setPrice: null,
-// });
