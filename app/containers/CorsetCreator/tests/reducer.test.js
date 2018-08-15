@@ -3,7 +3,7 @@ import corsetCreatorReducer from '../reducer';
 import * as actions from '../actions';
 
 describe('corsetCreatorReducer', () => {
-  const corset = { name: 'Test', type: 'underbust' };
+  const corset = { name: 'Test', type: 'Underbust' };
 
   // Default
   it('returns the initial state when the actionType is default or undefined', () => {

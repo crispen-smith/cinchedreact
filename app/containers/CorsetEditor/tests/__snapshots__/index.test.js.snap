@@ -4,7 +4,6 @@ exports[`<CorsetEditor /> Renders a CorsetEditor 1`] = `
 <div>
   <form
     className="FormComponent__FC-jRyaDy hZINgg"
-    onSubmit={[Function]}
   >
     PLACEHOLDER
   </form>

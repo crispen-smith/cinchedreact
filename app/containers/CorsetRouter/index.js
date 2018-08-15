@@ -29,12 +29,12 @@ const CorsetRouter = () => (
     <Route exact path="/corsets/edit/:id" component={CorsetEditor} />
     <Route
       exact
-      path="/corsets/:filter(all|overbust|underbust)"
+      path="/corsets/:filter(all|Overbust|Underbust)"
       component={CorsetGallery}
     />
     <Route
       exact
-      path="/corsets/:filter(overbust|underbust)/:id"
+      path="/corsets/:filter(Overbust|Underbust)/:id"
       component={Corset}
     />
     <Route exact path="/corsets/create/" component={CorsetCreator} />

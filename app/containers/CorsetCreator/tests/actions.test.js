@@ -13,7 +13,7 @@ describe('CorsetCreator actions', () => {
 
   describe('Create Action', () => {
     it('has a type of actionTypes.create', () => {
-      const corset = { name: 'test', type: 'underbust' };
+      const corset = { name: 'test', type: 'Underbust' };
       const expected = {
         type: actionTypes.create,
         corset,

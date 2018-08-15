@@ -23,12 +23,11 @@ const FC = styled.form`
 /* eslint-disable react/prefer-stateless-function */
 class FormComponent extends React.PureComponent {
   render() {
-    return <FC onSubmit={this.props.onSubmit}>{this.props.children}</FC>;
+    return <FC>{this.props.children}</FC>;
   }
 }
 
 FormComponent.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),

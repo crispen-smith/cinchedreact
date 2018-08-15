@@ -57,8 +57,8 @@ describe('makeSelectFilteredCorsets', () => {
   let mockedState;
   const filteredCorsetsSelector = makeSelectorFilteredCorsets();
   const corsets = [
-    { name: 'underbust', type: 'underbust' },
-    { name: 'overbust', type: 'overbust' },
+    { name: 'Underbust', type: 'Underbust' },
+    { name: 'Overbust', type: 'Overbust' },
   ];
 
   beforeAll(() => {
@@ -73,8 +73,8 @@ describe('makeSelectFilteredCorsets', () => {
     expect(filteredCorsetsSelector(corsetGalleryState)).toEqual(corsets);
   });
 
-  it('Should only select the overbust corsets when the filter = overbust', () => {
-    const filter = 'overbust';
+  it('Should only select the Overbust corsets when the filter = Overbust', () => {
+    const filter = 'Overbust';
 
     mockedState = mockedState.set('filter', filter);
     const filteredCorsets = corsets.filter(corset => corset.type === filter);
@@ -85,8 +85,8 @@ describe('makeSelectFilteredCorsets', () => {
     );
   });
 
-  it('Should only select the underbust corsets when the filter = underbust', () => {
-    const filter = 'underbust';
+  it('Should only select the Underbust corsets when the filter = Underbust', () => {
+    const filter = 'Underbust';
 
     mockedState = mockedState.set('filter', filter);
     const filteredCorsets = corsets.filter(corset => corset.type === filter);

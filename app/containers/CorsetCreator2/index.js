@@ -33,7 +33,7 @@ import { resetAction } from '../CorsetGallery/actions';
 export class CorsetCreator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { productName: '', productType: 'overbust' };
+    this.state = { productName: '', productType: 'Overbust' };
     this.handleInitialFormChange = this.handleInitialFormChange.bind(this);
     this.handleInitialFormSubmit = this.handleInitialFormSubmit.bind(this);
   }

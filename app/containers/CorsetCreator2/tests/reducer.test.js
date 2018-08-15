@@ -3,7 +3,7 @@ import corsetCreatorReducer from '../reducer';
 import * as actions from '../actions';
 
 describe('corsetCreatorReducer', () => {
-  const corset = { name: 'Test', type: 'underbust' };
+  const corset = { name: 'Test', type: 'Underbust' };
 
   // Default
   it('returns the initial state when the actionType is default or undefined', () => {
@@ -56,7 +56,7 @@ describe('corsetCreatorReducer', () => {
   // setPrice
   it('Updates the price of the current corset when it recieves a setPrice action', () => {
     const corsets = [
-      { name: 'Second Test', type: 'overbust', price: 1 },
+      { name: 'Second Test', type: 'Overbust', price: 1 },
       corset,
     ]; // Note reducer pushes edited elements to the end of the array.
 
@@ -78,7 +78,7 @@ describe('corsetCreatorReducer', () => {
   // setDescription
   it('Updates the description of the current corset when it recieves a setDescription action', () => {
     const corsets = [
-      { name: 'Second Test', type: 'overbust', description: 'foo bar' },
+      { name: 'Second Test', type: 'Overbust', description: 'foo bar' },
       corset,
     ]; // Note reducer pushes edited elements to the end of the array.
 
@@ -99,7 +99,7 @@ describe('corsetCreatorReducer', () => {
 
   // setPrimaryImage
   it('Updates the primary image of the current corset when it recieves a setPrimaryImage action', () => {
-    const corsets = [{ name: 'Second Test', type: 'overbust' }, corset];
+    const corsets = [{ name: 'Second Test', type: 'Overbust' }, corset];
     // Note reducer pushes edited elements to the end of the array.
 
     const state = fromJS({
@@ -120,7 +120,7 @@ describe('corsetCreatorReducer', () => {
   // addImage
   it('Adds an image to the current corset image array when it recieves an addImage action', () => {
     const corsets = [
-      { name: 'Second Test', type: 'overbust', images: [] },
+      { name: 'Second Test', type: 'Overbust', images: [] },
       corset,
     ];
     // Note reducer pushes edited elements to the end of the array.

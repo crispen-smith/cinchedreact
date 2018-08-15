@@ -1,8 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SubmitButton /> Renders a BrandBox 1`] = `
+exports[`<SubmitButton /> Renders a disabled SubmitButton when the props include enabled-false 1`] = `
 <input
-  className="SubmitButton__SB-cMjXsV bpCIXX"
+  className="SubmitButton__SB-cMjXsV bgGhWk"
+  data-cursor="pointer"
+  disabled={true}
+  onClick={[Function]}
+  type="submit"
+  value="test"
+/>
+`;
+
+exports[`<SubmitButton /> Renders a disabled SubmitButton when the props include enabled-true 1`] = `
+<input
+  className="SubmitButton__SB-cMjXsV bgGhWk"
+  data-cursor="pointer"
+  disabled={false}
+  onClick={[Function]}
   type="submit"
   value="test"
 />

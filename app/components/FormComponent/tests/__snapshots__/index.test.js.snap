@@ -3,7 +3,6 @@
 exports[`<FormComponent /> Renders a FormComponent 1`] = `
 <form
   className="FormComponent__FC-jRyaDy hZINgg"
-  onSubmit={[Function]}
 >
   <label
     htmlFor="test"

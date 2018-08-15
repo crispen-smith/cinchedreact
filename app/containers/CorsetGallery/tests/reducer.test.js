@@ -17,7 +17,7 @@ describe(corsetGalleryReducer, () => {
   });
 
   it('Should handle the setFilter action correctly', () => {
-    const testFilter = 'underbust';
+    const testFilter = 'Underbust';
 
     const filtered = state.set('filter', testFilter);
 
