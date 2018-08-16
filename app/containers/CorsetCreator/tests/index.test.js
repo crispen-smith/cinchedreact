@@ -55,7 +55,7 @@ describe('<CorsetCreator />', () => {
     expect(creator).toMatchSnapshot();
     expect(creator.find('Redirect')).toHaveLength(0);
   });
-  it('handles name change correctly', () => {
+  it('handles name changes correctly', () => {
     const store = configureStore({}, browserHistory);
     const creator = mount(
       <Provider store={store}>
@@ -83,6 +83,11 @@ describe('<CorsetCreator />', () => {
       nameCallback,
       enabledCallBack,
     });
+
+    const cc = creator.find('CorsetCreator').at(0);
+
+    expect(cc.instance().nameValueCallback).toBeDefined();
+    expect(cc.instance().nameEnabledCallBack).toBeDefined();
   });
 });
 
