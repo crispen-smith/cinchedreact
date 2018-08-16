@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
+import { Redirect } from 'react-router-dom';
 
 import { compose } from 'redux';
 
@@ -25,74 +26,47 @@ import FormComponent from '../../components/FormComponent';
 import NameBox from '../../components/NameBox';
 import DropDown from '../../components/DropDown';
 import SubmitButton from '../../components/SubmitButton';
-import { resetAction } from '../CorsetGallery/actions';
 
 /* eslint-disable react/prefer-stateless-function */
 export class CorsetCreator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { productName: '', productType: 'overbust' };
-    this.handleInitialFormChange = this.handleInitialFormChange.bind(this);
-    this.handleInitialFormSubmit = this.handleInitialFormSubmit.bind(this);
+    this.state = {
+      corsetGallery: props.corsetGallery,
+      productName: '',
+      productType: 'Overbust',
+      enabled: false,
+      created: false,
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleProductChange = this.handleProductChange.bind(this);
+    this.handleChange = changeHandler;
   }
 
-  componentWillUnmount() {
-    this.props.dispatch(resetAction());
-  }
-
-  handleInitialFormChange(e) {
+  handleNameChange(e) {
     e.preventDefault();
-    const { corsets } = this.props;
-    const { productType } = this.state;
-    const { productName } = this.state;
-
-    const filteredCorsets = corsets.filter(
-      corset => corset.type === productType && corset.name === productName,
-    );
-    const valid = filteredCorsets.length === 0;
-    this.setState('valid', valid);
+    this.setState({ productName: e.target.value });
+    this.setState({ enabled: this.handleChange(e.target.value, this.state) });
   }
-  handleInitialFormSubmit(e) {
+
+  handleProductChange(e) {
+    e.preventDefault();
+    this.setState({ productType: e.target.value });
+    this.setState({ enabled: this.handleChange(e.target.value, this.state) });
+  }
+
+  handleSubmit(e) {
     e.preventDefault();
     const action = actions.create({
       name: this.state.productName,
       type: this.state.productType,
     });
     this.props.dispatch(action);
+    this.setState({ created: true });
   }
 
   render() {
-    let form;
-    if (!this.props.currentCorset) {
-      const handleNameChange = e =>
-        this.setState({ productName: e.target.value });
-      const handleTypeChange = e =>
-        this.setState({ productType: e.target.value });
-
-      form = (
-        <FormComponent
-          onSubmit={this.handleInitialFormSubmit}
-          onChange={this.handleInitialFormChange}
-          action={actions.create}
-          corsets={this.props.corsetGallery.corsets}
-        >
-          <NameBox
-            inputName="productName"
-            inputLabel="Name"
-            onChange={handleNameChange}
-            value={this.state.productName}
-          />
-          <DropDown
-            inputName="productType"
-            inputLabel="Type"
-            options={['Overbust', 'Underbust']}
-            value={this.state.productType}
-            onChange={handleTypeChange}
-          />
-          <SubmitButton label="create" />
-        </FormComponent>
-      );
-    }
     if (!this.props.loggedIn) {
       return (
         <React.Fragment>
@@ -101,28 +75,78 @@ export class CorsetCreator extends React.Component {
         </React.Fragment>
       );
     }
+    if (!this.state.created) {
+      return (
+        <div>
+          <Helmet>
+            <title>Create a new Corset</title>
+            <meta
+              name="description"
+              content="Use this screen to create a new corset in the corset gallery."
+            />
+          </Helmet>
+          <FormComponent>
+            <NameBox
+              inputName="productName"
+              inputLabel="Name"
+              onChange={this.handleNameChange}
+              value={this.state.productName}
+            />
+            <DropDown
+              inputName="productType"
+              inputLabel="Type"
+              options={['Overbust', 'Underbust']}
+              value={this.state.productType}
+              onChange={this.handleProductChange}
+            />
+            {this.state.enabled ? (
+              <SubmitButton
+                label="Create"
+                enabled
+                dataCursor="pointer"
+                onClick={this.handleSubmit}
+              />
+            ) : (
+              <SubmitButton
+                label="---"
+                enabled={false}
+                dataCursor="not-allowed"
+                onClick={this.handleSubmit}
+              />
+            )}
+          </FormComponent>
+        </div>
+      );
+    }
     return (
-      <div>
-        <Helmet>
-          <title>Create a new Corset</title>
-          <meta
-            name="description"
-            content="Use this screen to create a new corset in the corset gallery."
-          />
-        </Helmet>
-        {form}
-        <a href="/corsets/all">Gallery</a>lj
-      </div>
+      <Redirect
+        to={`/corsets/edit/${this.state.productType}/${this.state.productName}`}
+      />
     );
   }
 }
 
+export function changeHandler(e, state) {
+  if (e === '' || state.productName === '') return false;
+  const { corsets } = state.corsetGallery;
+  if (corsets && corsets.length > 0) return true;
+
+  const productType =
+    e === 'Underbust' || e === 'Overbust' ? e : state.productType;
+  const productName =
+    e === 'Underbust' || e === 'Overbust' ? state.productName : e;
+
+  const filteredCorsets = corsets.filter(
+    corset => corset.type === productType && corset.name === productName,
+  );
+
+  return !(filteredCorsets && filteredCorsets.length > 0);
+}
+
 CorsetCreator.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  corsetGallery: PropTypes.object,
-  currentCorset: PropTypes.string,
-  corsets: PropTypes.arrayOf(PropTypes.object),
   loggedIn: PropTypes.bool.isRequired,
+  corsetGallery: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({

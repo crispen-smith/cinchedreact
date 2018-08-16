@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router-dom';
 import configureStore from '../../../configureStore';
-import CorsetCreator from '../index';
+import CorsetCreator, { changeHandler } from '../index';
 import BrandedHeader from '../../BrandedHeader';
 
 describe('<CorsetCreator />', () => {
@@ -55,29 +55,61 @@ describe('<CorsetCreator />', () => {
     expect(creator).toMatchSnapshot();
     expect(creator.find('Redirect')).toHaveLength(0);
   });
+});
 
-  it('handles statechanges correctly with a valid new corset', () => {
-    const store = configureStore({}, browserHistory);
-
-    const creator = mount(
-      <Provider store={store}>
-        <CorsetCreator />
-      </Provider>,
-    );
-
-    const namebox = creator.find('NameBox').at(0);
-    const nameBoxField = namebox.find('input').at(0);
-    const submitbutton = creator.find('SubmitButton').at(0);
-    const promise = Promise.resolve();
-
-    creator.setState({ enabled: false });
-    expect(submitbutton.props().enabled).toEqual(false);
-
-    nameBoxField.simulate('change', { target: { value: 'Test' } });
-    creator.update();
-
-    return promise.then(() => {
-      expect(creator.state().enabled).toEqual(true);
-    });
+describe('ChangeHandler interactions with Name', () => {
+  it('returns false when passed an empty value', () => {
+    expect(
+      changeHandler('', {
+        corsetGallery: { corsets: [{ name: 'test', type: 'Underbust' }] },
+      }),
+    ).toEqual(false);
+  });
+  it('returns true when passed an empty set of corsets', () => {
+    expect(
+      changeHandler('test', {
+        corsetGallery: { corsets: [] },
+      }),
+    ).toEqual(true);
+  });
+  it('returns true when passed a name/type tuple not in the array', () => {
+    expect(
+      changeHandler('test2', {
+        corsetGallery: {
+          corsets: [{ name: 'test', type: 'Underbust' }],
+          productType: 'Underbust',
+        },
+      }),
+    ).toEqual(true);
+  });
+});
+describe('ChangeHandler interactions with ProductType', () => {
+  it('returns false when passed any ProductType and any name in state', () => {
+    expect(
+      changeHandler('Underbust', {
+        productName: '',
+        corsetGallery: { corsets: [{ name: 'test', type: 'Underbust' }] },
+      }),
+    ).toEqual(false);
+  });
+  it('returns true when passed an empty set of corsets', () => {
+    expect(
+      changeHandler('Underbust', {
+        corsetGallery: {
+          corsets: [],
+          ProductName: 'Test',
+        },
+      }),
+    ).toEqual(true);
+  });
+  it('returns true when passed a name/type tuple not in the array', () => {
+    expect(
+      changeHandler('Overbust', {
+        corsetGallery: {
+          corsets: [{ name: 'test', type: 'Underbust' }],
+          productType: 'Underbust',
+        },
+      }),
+    ).toEqual(true);
   });
 });
