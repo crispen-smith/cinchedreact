@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CorsetCreator /> Does not render the CorsetCreator when not logged 1`] = `
+exports[`<CorsetCreator /> Does not render the CorsetCreator when not logged in 1`] = `
 <Provider
   store={
     Object {

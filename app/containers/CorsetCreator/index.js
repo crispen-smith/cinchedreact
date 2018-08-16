@@ -46,8 +46,15 @@ export class CorsetCreator extends React.Component {
 
   handleNameChange(e) {
     e.preventDefault();
-    this.setState({ productName: e.target.value });
-    this.setState({ enabled: this.handleChange(e.target.value, this.state) });
+    const nameCallback = e.nameCallback ? e.nameCallback.bind(this) : () => {};
+    const enabledCallBack = e.enabledCallBack
+      ? e.enabledCallBack.bind(this)
+      : () => {};
+    this.setState({ productName: e.target.value }, nameCallback);
+    this.setState(
+      { enabled: this.handleChange(e.target.value, this.state) },
+      enabledCallBack,
+    );
   }
 
   handleProductChange(e) {

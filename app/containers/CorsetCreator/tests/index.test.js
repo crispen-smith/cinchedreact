@@ -23,7 +23,7 @@ describe('<CorsetCreator />', () => {
     expect(creator.find('SubmitButton')).toHaveLength(1);
   });
 
-  it('Does not render the CorsetCreator when not logged', () => {
+  it('Does not render the CorsetCreator when not logged in', () => {
     const store = configureStore({}, browserHistory);
     const creator = mount(
       <Provider store={store}>
@@ -54,6 +54,35 @@ describe('<CorsetCreator />', () => {
 
     expect(creator).toMatchSnapshot();
     expect(creator.find('Redirect')).toHaveLength(0);
+  });
+  it('handles name change correctly', () => {
+    const store = configureStore({}, browserHistory);
+    const creator = mount(
+      <Provider store={store}>
+        <CorsetCreator />
+      </Provider>,
+    );
+
+    const NameBox = creator
+      .find('NameBox')
+      .at(0)
+      .find('input')
+      .at(0);
+
+    function nameCallback() {
+      expect(this.state.productName).toEqual('test');
+    }
+
+    function enabledCallBack() {
+      expect(this.state.enabled).toEqual(false);
+    }
+
+    NameBox.simulate('change', {
+      target: { value: 'test' },
+      preventDefault: () => {},
+      nameCallback,
+      enabledCallBack,
+    });
   });
 });
 
@@ -92,7 +121,7 @@ describe('ChangeHandler interactions with ProductType', () => {
       }),
     ).toEqual(false);
   });
-  it('returns true when passed an empty set of corsets', () => {
+  it('returns true when passed an empty set of corsets as a result of ', () => {
     expect(
       changeHandler('Underbust', {
         corsetGallery: {
