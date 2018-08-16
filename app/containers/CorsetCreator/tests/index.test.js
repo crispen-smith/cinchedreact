@@ -88,6 +88,14 @@ describe('<CorsetCreator />', () => {
 
     expect(cc.instance().nameValueCallback).toBeDefined();
     expect(cc.instance().nameEnabledCallBack).toBeDefined();
+
+    NameBox.simulate('change', {
+      target: { value: 'test' },
+      preventDefault: () => {},
+    });
+
+    expect(cc.instance().nameValueCallback).toBeDefined();
+    expect(cc.instance().nameEnabledCallBack).toBeDefined();
   });
 });
 
