@@ -28,8 +28,8 @@ describe('<CorsetRouter />', () => {
     expect(wrapper.find('CorsetGallery')).toHaveLength(1);
   });
 
-  it('Renders the gallery when the path is /corsets/overbust', () => {
-    match = ['/corsets/overbust'];
+  it('Renders the gallery when the path is /corsets/Overbust', () => {
+    match = ['/corsets/Overbust'];
 
     const wrapper = mount(
       <Provider store={store}>
@@ -42,8 +42,8 @@ describe('<CorsetRouter />', () => {
     expect(wrapper.find('CorsetGallery')).toHaveLength(1);
   });
 
-  it('Renders the gallery when the path is /corsets/underbust', () => {
-    match = ['/corsets/underbust'];
+  it('Renders the gallery when the path is /corsets/Underbust', () => {
+    match = ['/corsets/Underbust'];
 
     const wrapper = mount(
       <Provider store={store}>
@@ -56,8 +56,8 @@ describe('<CorsetRouter />', () => {
     expect(wrapper.find('CorsetGallery')).toHaveLength(1);
   });
 
-  it('Renders a Corset when the path is /corsets/underbust/test_corset', () => {
-    match = ['/corsets/underbust/test_corset'];
+  it('Renders a Corset when the path is /corsets/Underbust/test_corset', () => {
+    match = ['/corsets/Underbust/test_corset'];
 
     const wrapper = mount(
       <Provider store={store}>
@@ -70,8 +70,8 @@ describe('<CorsetRouter />', () => {
     expect(wrapper.find('Corset')).toHaveLength(1);
   });
 
-  it('Renders a Corset when the path is /corsets/overbust/test_corset', () => {
-    match = ['/corsets/overbust/test_corset'];
+  it('Renders a Corset when the path is /corsets/Overbust/test_corset', () => {
+    match = ['/corsets/Overbust/test_corset'];
 
     const wrapper = mount(
       <Provider store={store}>
