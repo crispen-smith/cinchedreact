@@ -56,17 +56,29 @@ describe('<CorsetCreator />', () => {
     const cc = creator.find('CorsetCreator').at(0);
     const nameBox = creator.find('NameBox').at(0);
 
-    nameBox.simulate('click', {
+    nameBox.simulate('change', {
       // First Call - with Handler defined
       target: {
         value: 'test',
+        preventDefault: () => {},
       },
-      preventDefault: () => {},
-      handler: () => {
-        const redirect = cc.find('redirect').at(0);
-        expect(redirect).toBeDefined();
-        expect(cc.instance().action).toBeDefined();
-        expect(cc.instance().submitCallback).toBeDefined();
+    });
+    const submitButton = creator
+      .find('SubmitButton')
+      .at(0)
+      .find('input')
+      .at(0);
+
+    submitButton.simulate('click', {
+      // First Call - with Handler defined
+      target: {
+        preventDefault: () => {},
+        handler: () => {
+          const redirect = cc.find('redirect').at(0);
+          expect(redirect).toBeDefined();
+          expect(cc.instance().action).toBeDefined();
+          expect(cc.instance().submitCallback).toBeDefined();
+        },
       },
     });
   });
