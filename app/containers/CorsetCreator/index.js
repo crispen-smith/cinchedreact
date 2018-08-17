@@ -61,7 +61,7 @@ export class CorsetCreator extends React.Component {
 
   handleProductChange(e) {
     e.preventDefault();
-    this.typeValueCallback = e.valueallback
+    this.typeValueCallback = e.valueCallback
       ? e.valueCallback.bind(this)
       : () => {};
     this.typeEnabledCallback = e.enabledCallback
