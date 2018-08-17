@@ -42,8 +42,7 @@ describe('<CorsetCreator />', () => {
     expect(creator.find('SubmitButton')).toHaveLength(0);
   });
 
-  it('Renders a Redirect when the created flag is true', () => {
-    // TODO: point this at state, using a callback - should be able to see wrapper from within the callback
+  it('Creates a new corset entry when the  submitButton is enabled and clicked', () => {
     const brand = { loggedIn: true };
     const corsetGallery = { created: true };
     const store = configureStore({}, browserHistory, brand, corsetGallery);
@@ -57,16 +56,21 @@ describe('<CorsetCreator />', () => {
     const cc = creator.find('CorsetCreator').at(0);
     const nameBox = creator.find('NameBox').at(0);
 
-    nameBox.simulate('change', {
+    nameBox.simulate('click', {
+      // First Call - with Handler defined
       target: {
         value: 'test',
       },
+      preventDefault: () => {},
       handler: () => {
         const redirect = cc.find('redirect').at(0);
         expect(redirect).toBeDefined();
+        expect(cc.instance().action).toBeDefined();
+        expect(cc.instance().submitCallback).toBeDefined();
       },
     });
   });
+
   it('handles name changes correctly', () => {
     const store = configureStore({}, browserHistory);
     const creator = mount(
@@ -108,6 +112,49 @@ describe('<CorsetCreator />', () => {
 
     expect(cc.instance().nameValueCallback).toBeDefined();
     expect(cc.instance().nameEnabledCallBack).toBeDefined();
+  });
+
+  it('handles ProductType changes correctly', () => {
+    const store = configureStore({}, browserHistory);
+    const creator = mount(
+      <Provider store={store}>
+        <CorsetCreator />
+      </Provider>,
+    );
+
+    const productType = creator
+      .find('DropDown')
+      .at(0)
+      .find('option')
+      .at(0);
+
+    function valueCallback() {
+      expect(this.state.ProductType).toEqual('Underbust');
+    }
+
+    function enabledCallBack() {
+      expect(this.state.enabled).toEqual(false);
+    }
+
+    productType.simulate('change', {
+      target: { value: 'test' },
+      preventDefault: () => {},
+      valueCallback,
+      enabledCallBack,
+    });
+
+    const cc = creator.find('CorsetCreator').at(0);
+
+    expect(cc.instance().typeValueCallback).toBeDefined();
+    expect(cc.instance().typeEnabledCallback).toBeDefined();
+
+    productType.simulate('change', {
+      target: { value: 'test' },
+      preventDefault: () => {},
+    });
+
+    expect(cc.instance().typeValueCallback).toBeDefined();
+    expect(cc.instance().typeEnabledCallback).toBeDefined();
   });
 });
 

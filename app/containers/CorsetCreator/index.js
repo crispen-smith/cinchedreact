@@ -61,19 +61,25 @@ export class CorsetCreator extends React.Component {
 
   handleProductChange(e) {
     e.preventDefault();
+    this.typeValueCallback = e.valueallback
+      ? e.valueCallback.bind(this)
+      : () => {};
+    this.typeEnabledCallback = e.enabledCallback
+      ? e.enabledCallBack.bind(this)
+      : () => {};
     this.setState({ productType: e.target.value });
     this.setState({ enabled: this.handleChange(e.target.value, this.state) });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const action = actions.create({
+    this.action = actions.create({
       name: this.state.productName,
       type: this.state.productType,
     });
-    this.props.dispatch(action);
-    const callback = e.handler ? e.handler : () => {};
-    this.setState({ created: true }, callback);
+    this.props.dispatch(this.action);
+    this.submitCallback = e.handler ? e.handler.bind(this) : () => {};
+    this.setState({ created: true }, this.submitCallback);
   }
 
   render() {
