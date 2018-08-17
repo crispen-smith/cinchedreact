@@ -43,17 +43,29 @@ describe('<CorsetCreator />', () => {
   });
 
   it('Renders a Redirect when the created flag is true', () => {
+    // TODO: point this at state, using a callback - should be able to see wrapper from within the callback
     const brand = { loggedIn: true };
     const corsetGallery = { created: true };
-    const store = configureStore({}, brand, corsetGallery);
+    const store = configureStore({}, browserHistory, brand, corsetGallery);
+
     const creator = mount(
       <Provider store={store}>
         <CorsetCreator />
       </Provider>,
     );
 
-    expect(creator).toMatchSnapshot();
-    expect(creator.find('Redirect')).toHaveLength(0);
+    const cc = creator.find('CorsetCreator').at(0);
+    const nameBox = creator.find('NameBox').at(0);
+
+    nameBox.simulate('change', {
+      target: {
+        value: 'test',
+      },
+      handler: () => {
+        const redirect = cc.find('redirect').at(0);
+        expect(redirect).toBeDefined();
+      },
+    });
   });
   it('handles name changes correctly', () => {
     const store = configureStore({}, browserHistory);

@@ -72,7 +72,8 @@ export class CorsetCreator extends React.Component {
       type: this.state.productType,
     });
     this.props.dispatch(action);
-    this.setState({ created: true });
+    const callback = e.handler ? e.handler : () => {};
+    this.setState({ created: true }, callback);
   }
 
   render() {
