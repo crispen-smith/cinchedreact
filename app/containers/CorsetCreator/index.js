@@ -45,6 +45,8 @@ export class CorsetCreator extends React.Component {
   }
 
   handleNameChange(e) {
+    if (e.persist) e.persist();
+
     e.preventDefault();
     this.nameValueCallback = e.nameCallback
       ? e.nameCallback.bind(this)
@@ -63,6 +65,8 @@ export class CorsetCreator extends React.Component {
   }
 
   handleProductChange(e) {
+    if (e.persist) e.persist();
+
     e.preventDefault();
     this.typeValueCallback = e.valueCallback
       ? e.valueCallback.bind(this)
@@ -75,6 +79,8 @@ export class CorsetCreator extends React.Component {
   }
 
   handleSubmit(e) {
+    if (e.persist) e.persist();
+
     e.preventDefault();
     this.action = actions.create({
       name: this.state.productName,
