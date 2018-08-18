@@ -2,82 +2,58 @@ import React from 'react';
 
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
-import { browserHistory } from 'react-router-dom';
+import { browserHistory, MemoryRouter } from 'react-router-dom';
 import configureStore from '../../../configureStore';
 import CorsetCreator, { changeHandler } from '../index';
 import BrandedHeader from '../../BrandedHeader';
 
 describe('<CorsetCreator />', () => {
-  it('Renders a CorsetCreator when loggedIn and currentCorset is empty', () => {
+  it('Allows the  creation of a new corset entry when logged in and recieving valid inputs', () => {
     const store = configureStore({}, browserHistory);
+    const match = ['/corsets/create', '/corsets/edit/:type/:name'];
+    const initialIndex = 1;
 
     const creator = mount(
       <Provider store={store}>
-        <CorsetCreator />
+        <MemoryRouter initialEntries={match} initialIndex={initialIndex}>
+          <CorsetCreator />
+        </MemoryRouter>
       </Provider>,
     );
 
-    expect(creator).toMatchSnapshot();
+    expect(creator.find('CorsetCreator')).toHaveLength(1);
     expect(creator.find('DropDown')).toHaveLength(1);
     expect(creator.find('NameBox')).toHaveLength(1);
     expect(creator.find('SubmitButton')).toHaveLength(1);
-  });
 
-  it('Does not render the CorsetCreator when not logged in', () => {
-    const store = configureStore({}, browserHistory);
-    const creator = mount(
-      <Provider store={store}>
-        <div>
-          <BrandedHeader />
-          <CorsetCreator />
-        </div>
-      </Provider>,
-    );
-    const bhLink = creator.find('a');
-    bhLink.simulate('click');
+    const nameBox = creator
+      .find('NameBox')
+      .at(0)
+      .find('input')
+      .at(0);
 
-    expect(creator).toMatchSnapshot();
-    expect(creator.find('DropDown')).toHaveLength(0);
-    expect(creator.find('NameBox')).toHaveLength(0);
-    expect(creator.find('SubmitButton')).toHaveLength(0);
-  });
-
-  it('Creates a new corset entry when the  submitButton is enabled and clicked', () => {
-    const brand = { loggedIn: true };
-    const corsetGallery = { created: true };
-    const store = configureStore({}, browserHistory, brand, corsetGallery);
-
-    const creator = mount(
-      <Provider store={store}>
-        <CorsetCreator />
-      </Provider>,
-    );
-
-    const cc = creator.find('CorsetCreator').at(0);
-    const nameBox = creator.find('NameBox').at(0);
-
-    nameBox.simulate('change', {
-      // First Call - with Handler defined
-      target: {
-        value: 'test',
-        preventDefault: () => {},
-      },
-    });
-    const submitButton = creator
+    const sb = creator
       .find('SubmitButton')
       .at(0)
       .find('input')
       .at(0);
 
-    submitButton.simulate('click', {
-      // First Call - with Handler defined
-      preventDefault: () => {},
-      handler: () => {
-        const redirect = cc.find('redirect').at(0);
-        expect(redirect).toBeDefined();
-        expect(cc.instance().action).toBeDefined();
-        expect(cc.instance().submitCallback).toBeDefined();
+    expect(creator.find('redirect')).toHaveLength(0);
+
+    nameBox.simulate('change', {
+      target: {
+        value: 'test',
       },
+      preventDefault: () => {},
+    });
+
+    function handler() {
+      expect(this.state.created).toEqual(true);
+    }
+
+    sb.simulate('click', {
+      preventDefault: () => {},
+      handler,
     });
   });
 
@@ -100,7 +76,7 @@ describe('<CorsetCreator />', () => {
     }
 
     function enabledCallBack() {
-      expect(this.state.enabled).toEqual(false);
+      expect(this.state.enabled).toEqual(true);
     }
 
     NameBox.simulate('change', {
@@ -165,6 +141,25 @@ describe('<CorsetCreator />', () => {
 
     expect(cc.instance().typeValueCallback).toBeDefined();
     expect(cc.instance().typeEnabledCallback).toBeDefined();
+  });
+
+  it('Does not render the CorsetCreator when not logged in', () => {
+    const store = configureStore({}, browserHistory);
+    const creator = mount(
+      <Provider store={store}>
+        <div>
+          <BrandedHeader />
+          <CorsetCreator />
+        </div>
+      </Provider>,
+    );
+    const bhLink = creator.find('a');
+    bhLink.simulate('click');
+
+    expect(creator).toMatchSnapshot();
+    expect(creator.find('DropDown')).toHaveLength(0);
+    expect(creator.find('NameBox')).toHaveLength(0);
+    expect(creator.find('SubmitButton')).toHaveLength(0);
   });
 });
 

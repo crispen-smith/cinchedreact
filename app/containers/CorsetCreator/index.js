@@ -52,11 +52,14 @@ export class CorsetCreator extends React.Component {
     this.nameEnabledCallBack = e.enabledCallBack
       ? e.enabledCallBack.bind(this)
       : () => {};
-    this.setState({ productName: e.target.value }, this.nameValueCallback);
-    this.setState(
-      { enabled: this.handleChange(e.target.value, this.state) },
-      this.nameEnabledCallBack,
-    );
+    this.nameChangeCallback = () => {
+      this.nameValueCallback();
+      this.setState(
+        { enabled: this.handleChange(e.target.value, this.state) },
+        this.nameEnabledCallBack,
+      );
+    };
+    this.setState({ productName: e.target.value }, this.nameChangeCallback);
   }
 
   handleProductChange(e) {
@@ -144,7 +147,12 @@ export class CorsetCreator extends React.Component {
 
 export function changeHandler(e, state) {
   if (e === '' || state.productName === '') return false;
-  const { corsets } = state.corsetGallery;
+
+  const corsets =
+    state.corsetGallery && state.corsetGallery.corsets
+      ? state.corsetGallery.corsets
+      : null;
+
   if (!corsets || corsets.length === 0 || !corsets.filter) return true;
 
   const productType =
