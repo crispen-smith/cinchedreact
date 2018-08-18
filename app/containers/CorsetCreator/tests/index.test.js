@@ -71,14 +71,12 @@ describe('<CorsetCreator />', () => {
 
     submitButton.simulate('click', {
       // First Call - with Handler defined
-      target: {
-        preventDefault: () => {},
-        handler: () => {
-          const redirect = cc.find('redirect').at(0);
-          expect(redirect).toBeDefined();
-          expect(cc.instance().action).toBeDefined();
-          expect(cc.instance().submitCallback).toBeDefined();
-        },
+      preventDefault: () => {},
+      handler: () => {
+        const redirect = cc.find('redirect').at(0);
+        expect(redirect).toBeDefined();
+        expect(cc.instance().action).toBeDefined();
+        expect(cc.instance().submitCallback).toBeDefined();
       },
     });
   });
