@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFoundComponent /> Renders a NotFoundComponent 1`] = `
+<div
+  className="NotFoundComponent__NFC-flsftX gJcyuT"
+>
+  Looks like the page you were looking for celebrated a litle too hard and has disapeared.
+</div>
+`;

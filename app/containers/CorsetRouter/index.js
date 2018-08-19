@@ -6,28 +6,18 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import styled from 'styled-components';
 
 import CorsetEditor from 'containers/CorsetEditor';
 import CorsetGallery from 'containers/CorsetGallery';
 import CorsetCreator from 'containers/CorsetCreator';
 import Corset from 'containers/Corset';
-
-const NF = styled.div`
-  font-size: 2rem;
-  width: 100%;
-  padding: 0;
-  padding-top: 3rem;
-  margin: 0;
-  text-align: center;
-`;
-
-const NotFound = () => <NF>Oh-oh, looks like something went wrong.</NF>;
+import NotFoundComponent from '../../components/NotFoundComponent';
 
 const CorsetRouter = () => (
   <Switch>
     <Route
       exact
+      sensitive
       path="/corsets/edit/:filter(Overbust|Underbust)/:id"
       component={CorsetEditor}
     />
@@ -43,7 +33,7 @@ const CorsetRouter = () => (
     />
     <Route exact path="/corsets/create/" component={CorsetCreator} />
     <Route exact path="/corsets/" component={CorsetGallery} />
-    <Route component={NotFound} />
+    <Route component={NotFoundComponent} />
   </Switch>
 );
 

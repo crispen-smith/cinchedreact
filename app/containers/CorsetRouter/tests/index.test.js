@@ -84,8 +84,8 @@ describe('<CorsetRouter />', () => {
     expect(wrapper.find('Corset')).toHaveLength(1);
   });
 
-  it('Renders the editor when the path is /corsets/edit/test_corset', () => {
-    match = ['/corsets/edit/test_corset'];
+  it('Renders the editor when the path is /corsets/edit/Underbust/test_corset', () => {
+    match = ['/corsets/edit/Underbust/test_corset'];
 
     const wrapper = mount(
       <Provider store={store}>
@@ -98,6 +98,19 @@ describe('<CorsetRouter />', () => {
     expect(wrapper.find('CorsetEditor')).toHaveLength(1);
   });
 
+  it('Renders the editor when the path is /corsets/edit/Overbust/test_corset', () => {
+    match = ['/corsets/edit/Overbust/test_corset'];
+
+    const wrapper = mount(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={match}>
+          <CorsetRouter />
+        </MemoryRouter>
+      </Provider>,
+    );
+
+    expect(wrapper.find('CorsetEditor')).toHaveLength(1);
+  });
   it('Renders the creator when the path is /corsets/create', () => {
     match = ['/corsets/create'];
 
