@@ -26,7 +26,11 @@ const NotFound = () => <NF>Oh-oh, looks like something went wrong.</NF>;
 
 const CorsetRouter = () => (
   <Switch>
-    <Route exact path="/corsets/edit/:id" component={CorsetEditor} />
+    <Route
+      exact
+      path="/corsets/edit/:filter(Overbust|Underbust)/:id"
+      component={CorsetEditor}
+    />
     <Route
       exact
       path="/corsets/:filter(all|Overbust|Underbust)"

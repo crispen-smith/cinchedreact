@@ -1,25 +1,10 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import { Provider } from 'react-redux';
-import { browserHistory } from 'react-router-dom';
+// import React from 'react';
+// import { shallow } from 'enzyme';
 
-import CorsetEditor from '../index';
-import configureStore from '../../../configureStore';
+// import { CorsetCreator } from '../index';
 
-describe('<CorsetEditor />', () => {
-  let store;
-  beforeAll(() => {
-    store = configureStore({}, browserHistory);
-  });
-
-  it('Renders a CorsetEditor', () => {
-    const tree = renderer
-      .create(
-        <Provider store={store}>
-          <CorsetEditor />
-        </Provider>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+describe('<CorsetCreator />', () => {
+  it('Expect to have unit tests specified', () => {
+    expect(true).toEqual(false);
   });
 });

@@ -1,7 +1,21 @@
 /*
  *
- * CorsetEditor constants
+ * CorsetCreator constants
  *
  */
 
-export const DEFAULT_ACTION = 'app/CorsetEditor/DEFAULT_ACTION';
+import keymirror from 'keymirror';
+
+const actionTypes = keymirror({
+  default: null,
+  save: null,
+  isSaved: null,
+  create: null,
+  setDescription: null,
+  setPrimaryImage: null,
+  addImage: null,
+  setPrice: null,
+  reset: null,
+});
+
+export default actionTypes;
