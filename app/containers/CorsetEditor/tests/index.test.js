@@ -3,7 +3,7 @@
 
 // import { CorsetCreator } from '../index';
 
-describe('<CorsetCreator />', () => {
+describe('<CorsetEditor />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });
