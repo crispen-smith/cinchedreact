@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Not /> Renders a Not component 1`] = `
+<div
+  className="Not-bJJsFZ hKjuvT"
+>
+  This is not a what it should not be.
+</div>
+`;

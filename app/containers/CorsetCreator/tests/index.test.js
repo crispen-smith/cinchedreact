@@ -147,7 +147,7 @@ describe('<CorsetCreator />', () => {
     expect(cc.instance().typeEnabledCallback).toBeDefined();
   });
 
-  it('Does not render the CorsetCreator when not logged in', () => {
+  it('Renders only a NotLoggedInComponent when not logged in', () => {
     const store = configureStore({}, browserHistory);
     const creator = mount(
       <Provider store={store}>
@@ -161,6 +161,7 @@ describe('<CorsetCreator />', () => {
     bhLink.simulate('click');
 
     expect(creator).toMatchSnapshot();
+    expect(creator.find('NotLoggedInComponent')).toHaveLength(1);
     expect(creator.find('DropDown')).toHaveLength(0);
     expect(creator.find('NameBox')).toHaveLength(0);
     expect(creator.find('SubmitButton')).toHaveLength(0);

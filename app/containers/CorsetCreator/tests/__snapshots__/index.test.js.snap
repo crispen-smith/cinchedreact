@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CorsetCreator /> Does not render the CorsetCreator when not logged in 1`] = `
+exports[`<CorsetCreator /> Renders only a NotLoggedInComponent when not logged in 1`] = `
 <Provider
   store={
     Object {
@@ -131,12 +131,20 @@ exports[`<CorsetCreator /> Does not render the CorsetCreator when not logged in 
           filteredCorsets={Array []}
           loggedIn={false}
         >
-          <h1>
-            Corset Creator
-          </h1>
-          <p>
-            you must be logged in as an admin to access this page
-          </p>
+          <NotLoggedInComponent
+            title="Corset Creator"
+          >
+            <h1>
+              Corset Creator
+            </h1>
+            <Not>
+              <div
+                className="Not-bJJsFZ hKjuvT"
+              >
+                You must be logged in to access this page.
+              </div>
+            </Not>
+          </NotLoggedInComponent>
         </CorsetCreator>
       </Connect(CorsetCreator)>
     </withReducer(Connect(CorsetCreator))>

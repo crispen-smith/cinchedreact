@@ -23,6 +23,7 @@ import { makeSelectLoggedIn } from '../BrandedHeader/selectors';
 import reducer from './reducer';
 // import * as actions from './actions';
 import saga from './saga';
+import NotLoggedInComponent from '../../components/NotLoggedInComponent';
 // import FormComponent from '../../components/FormComponent';
 // import NameBox from '../../components/NameBox';
 // import DropDown from '../../components/DropDown';
@@ -35,10 +36,10 @@ export class CorsetEditor extends React.Component {
   // }
 
   render() {
-    if (this.props.loggedIn) {
-      return <div>Placeholder</div>;
-    }
-    return <div>Placehoulder</div>;
+    if (!this.props.loggedIn)
+      return <NotLoggedInComponent title="Corset Editor" />;
+
+    return <div>Placeholder</div>;
   }
 }
 

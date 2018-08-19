@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
@@ -26,6 +26,7 @@ import FormComponent from '../../components/FormComponent';
 import NameBox from '../../components/NameBox';
 import DropDown from '../../components/DropDown';
 import SubmitButton from '../../components/SubmitButton';
+import NotLoggedInComponent from '../../components/NotLoggedInComponent';
 
 /* eslint-disable react/prefer-stateless-function */
 export class CorsetCreator extends React.Component {
@@ -92,17 +93,11 @@ export class CorsetCreator extends React.Component {
   }
 
   render() {
-    if (!this.props.loggedIn) {
-      return (
-        <React.Fragment>
-          <h1>Corset Creator</h1>
-          <p>you must be logged in as an admin to access this page</p>
-        </React.Fragment>
-      );
-    }
+    if (!this.props.loggedIn)
+      return <NotLoggedInComponent title="Corset Creator" />;
     if (!this.state.created) {
       return (
-        <div>
+        <Fragment>
           <Helmet>
             <title>Create a new Corset</title>
             <meta
@@ -110,6 +105,7 @@ export class CorsetCreator extends React.Component {
               content="Use this screen to create a new corset in the corset gallery."
             />
           </Helmet>
+          <h1>Create a new Corset</h1>
           <FormComponent>
             <NameBox
               inputName="productName"
@@ -140,7 +136,7 @@ export class CorsetCreator extends React.Component {
               />
             )}
           </FormComponent>
-        </div>
+        </Fragment>
       );
     }
     return (

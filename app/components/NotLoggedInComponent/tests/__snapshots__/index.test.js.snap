@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotLoggedInComponent /> Renders a BrandBox 1`] = `
+Array [
+  <h1>
+    Not Logged In Test
+  </h1>,
+  <div
+    className="Not-bJJsFZ hKjuvT"
+  >
+    You must be logged in to access this page.
+  </div>,
+]
+`;
