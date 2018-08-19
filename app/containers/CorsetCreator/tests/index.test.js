@@ -44,6 +44,7 @@ describe('<CorsetCreator />', () => {
       target: {
         value: 'test',
       },
+      persist: () => {},
       preventDefault: () => {},
     });
 
@@ -53,6 +54,7 @@ describe('<CorsetCreator />', () => {
 
     sb.simulate('click', {
       preventDefault: () => {},
+      persist: () => {},
       handler,
     });
   });
@@ -84,6 +86,7 @@ describe('<CorsetCreator />', () => {
       preventDefault: () => {},
       nameCallback,
       enabledCallBack,
+      persist: () => {},
     });
 
     const cc = creator.find('CorsetCreator').at(0);
@@ -123,7 +126,8 @@ describe('<CorsetCreator />', () => {
     }
 
     productType.simulate('change', {
-      target: { value: 'test' },
+      target: { value: 'Overbust' },
+      persist: () => {},
       preventDefault: () => {},
       valueCallback,
       enabledCallBack,
@@ -135,7 +139,7 @@ describe('<CorsetCreator />', () => {
     expect(cc.instance().typeEnabledCallback).toBeDefined();
 
     productType.simulate('change', {
-      target: { value: 'test' },
+      target: { value: 'Underbust' },
       preventDefault: () => {},
     });
 
