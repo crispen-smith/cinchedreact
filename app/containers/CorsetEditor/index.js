@@ -31,10 +31,6 @@ import NotLoggedInComponent from '../../components/NotLoggedInComponent';
 
 /* eslint-disable react/prefer-stateless-function */
 export class CorsetEditor extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
   render() {
     if (!this.props.loggedIn)
       return <NotLoggedInComponent title="Corset Editor" />;
