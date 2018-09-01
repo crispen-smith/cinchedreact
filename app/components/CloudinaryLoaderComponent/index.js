@@ -30,7 +30,7 @@ class CloudinaryLoaderComponent extends React.Component {
     this.state = { error: false };
     this.onImageDrop = this.onImageDrop.bind(this);
   }
-  imageDrop(files) {
+  onImageDrop(files) {
     const upload = request
       .post(CLOUDINARY_UPLOAD_URL)
       .field('upload_preset', this.props.preset)

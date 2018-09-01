@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Errorbar /> Renders an ErrorBar 1`] = `
+<div
+  className="ErrorBar-jIbckV kWZWPS"
+>
+  TEST
+</div>
+`;

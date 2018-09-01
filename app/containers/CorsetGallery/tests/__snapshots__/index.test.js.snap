@@ -118,17 +118,17 @@ exports[`<CorsetGallery /> Renders a Corset Snapshot when LoggedIn = True 1`] = 
                 />
               </SideEffect(NullComponent)>
             </HelmetWrapper>
-            <ProductStyling__ProductH1>
+            <ProductTitle>
               <h1
-                className="ProductStyling__ProductH1-cfShhD ivnvGw"
+                className="ProductTitle-ertmtV hBRClR"
               >
                 All
                  Corsets
               </h1>
-            </ProductStyling__ProductH1>
-            <ProductStyling__ProductGrid>
+            </ProductTitle>
+            <ProductGrid>
               <div
-                className="ProductStyling__ProductGrid-JLKAK eCTcgP"
+                className="ProductGrid-dKkFgu fwcJUv"
               >
                 <div>
                    
@@ -163,7 +163,7 @@ exports[`<CorsetGallery /> Renders a Corset Snapshot when LoggedIn = True 1`] = 
                   </CorsetThumbnailComponent__CTC>
                 </CorsetThumbnailComponent>
               </div>
-            </ProductStyling__ProductGrid>
+            </ProductGrid>
           </div>
         </CorsetGallery>
       </Connect(CorsetGallery)>
@@ -290,17 +290,17 @@ exports[`<CorsetGallery /> Renders a Corset Snapshot when LoggedIn = false 1`] =
                 />
               </SideEffect(NullComponent)>
             </HelmetWrapper>
-            <ProductStyling__ProductH1>
+            <ProductTitle>
               <h1
-                className="ProductStyling__ProductH1-cfShhD ivnvGw"
+                className="ProductTitle-ertmtV hBRClR"
               >
                 All
                  Corsets
               </h1>
-            </ProductStyling__ProductH1>
-            <ProductStyling__ProductGrid>
+            </ProductTitle>
+            <ProductGrid>
               <div
-                className="ProductStyling__ProductGrid-JLKAK eCTcgP"
+                className="ProductGrid-dKkFgu fwcJUv"
               >
                 <div>
                    
@@ -335,7 +335,7 @@ exports[`<CorsetGallery /> Renders a Corset Snapshot when LoggedIn = false 1`] =
                   </CorsetThumbnailComponent__CTC>
                 </CorsetThumbnailComponent>
               </div>
-            </ProductStyling__ProductGrid>
+            </ProductGrid>
           </div>
         </CorsetGallery>
       </Connect(CorsetGallery)>

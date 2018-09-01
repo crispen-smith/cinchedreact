@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProcuctGrid /> Renders a ProductGrid 1`] = `
+<div
+  className="ProductGrid-dKkFgu fwcJUv"
+>
+  TEST
+</div>
+`;

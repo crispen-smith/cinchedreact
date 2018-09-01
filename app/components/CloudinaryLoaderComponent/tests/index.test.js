@@ -1,10 +1,25 @@
-// import React from 'react';
-// import { shallow } from 'enzyme';
-
-// import CloudinaryLoaderComponent from '../index';
+import React from 'react';
+import renderer from 'react-test-renderer';
+import CloudinaryLoaderComponent from '../index';
 
 describe('<CloudinaryLoaderComponent />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  it('Renders a CloudinaryLoaderComponent', () => {
+    const dispatch = func => func();
+    const completionHandler = () => null;
+    const preset = 'corset';
+    const dropMessage = 'Dropped';
+    const wrapper = renderer
+      .create(
+        <CloudinaryLoaderComponent
+          dispatch={dispatch}
+          completionHandler={completionHandler}
+          preset={preset}
+          dropMessage={dropMessage}
+        >
+          TEST
+        </CloudinaryLoaderComponent>,
+      )
+      .toJSON();
+    expect(wrapper).toMatchSnapshot();
   });
 });

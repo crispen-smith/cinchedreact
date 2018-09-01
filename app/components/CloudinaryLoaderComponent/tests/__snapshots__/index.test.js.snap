@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CloudinaryLoaderComponent /> Renders a CloudinaryLoaderComponent 1`] = `
+<div
+  className="CloudinaryLoaderComponent__CLC-kyCANm dMYuko"
+>
+  <div
+    aria-disabled={false}
+    className=""
+    onClick={[Function]}
+    onDragEnter={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "borderColor": "#666",
+        "borderRadius": 5,
+        "borderStyle": "dashed",
+        "borderWidth": 2,
+        "height": 200,
+        "position": "relative",
+        "width": 200,
+      }
+    }
+  >
+    <p>
+      Dropped
+    </p>
+    <input
+      accept="image/*"
+      autoComplete="off"
+      disabled={false}
+      multiple={false}
+      onChange={[Function]}
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "opacity": 0.00001,
+          "pointerEvents": "none",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="file"
+    />
+  </div>
+</div>
+`;

@@ -24,7 +24,8 @@ import saga from './saga';
 import * as actions from './actions';
 
 import CorsetThumbnailComponent from '../../components/CorsetThumbnailComponent';
-import { ProductGrid, ProductH1 } from '../../resources/ProductStyling';
+import ProductGrid from '../../components/ProductGrid';
+import ProductTitle from '../../components/ProductTitle';
 
 /* eslint-disable react/prefer-stateless-function */
 export class CorsetGallery extends React.Component {
@@ -83,7 +84,7 @@ export class CorsetGallery extends React.Component {
             content={`${displayFilter} Corsets at Cinched Tight`}
           />
         </Helmet>
-        <ProductH1>{displayFilter} Corsets</ProductH1>
+        <ProductTitle>{displayFilter} Corsets</ProductTitle>
         <ProductGrid>
           {displayCorsets}
           {CreateThumbnail}
