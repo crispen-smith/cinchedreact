@@ -20,31 +20,31 @@ const CLC = styled.div`
   }
 `;
 
-const CLOUDINARY_UPLOAD_URL =
-  'https://api.cloudinary.com/v1_1/www-cinchedtight-com/upload';
+export function onImageDrop(files) {
+  const upload = request
+    .post(this.CLOUDINARY_UPLOAD_URL)
+    .field('upload_preset', this.props.preset)
+    .field('file', files[0]);
+
+  upload.end((err, response) => {
+    if (err) {
+      this.setState({ error: true, err });
+    }
+    if (response.body.secure_url !== '') {
+      const action = this.props.completionHandler(response);
+      this.props.dispatch(action);
+    }
+  });
+}
 
 /* eslint-disable react/prefer-stateless-function */
 class CloudinaryLoaderComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = { error: false };
-    this.onImageDrop = this.onImageDrop.bind(this);
-  }
-  onImageDrop(files) {
-    const upload = request
-      .post(CLOUDINARY_UPLOAD_URL)
-      .field('upload_preset', this.props.preset)
-      .field('file', files[0]);
-
-    upload.end((err, response) => {
-      if (err) {
-        this.setState({ error: true, err });
-      }
-      if (response.body.secure_url !== '') {
-        const action = this.props.completionHandler(response);
-        this.props.dispatch(action);
-      }
-    });
+    this.CLOUDINARY_UPLOAD_URL =
+      'https://api.cloudinary.com/v1_1/www-cinchedtight-com/upload';
+    this.onImageDrop = onImageDrop.bind(this);
   }
 
   render() {
@@ -61,12 +61,11 @@ class CloudinaryLoaderComponent extends React.Component {
     );
   }
 }
-
 CloudinaryLoaderComponent.propTypes = {
-  completionHandler: PropTypes.func.isRequired,
-  preset: PropTypes.oneOf(['corset', 'lingerie', 'latex', 'client']),
+  completionHandler: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
+  preset: PropTypes.oneOf(['corset', 'lingerie', 'latex', 'client']), // eslint-disable-line react/no-unused-prop-types
   dropMessage: PropTypes.string.isRequired,
-  dispatch: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
 };
 
 export default CloudinaryLoaderComponent;
