@@ -2,7 +2,7 @@
 
 exports[`<ProcuctGrid /> Renders a ProductGrid 1`] = `
 <div
-  className="ProductGrid-dKkFgu fwcJUv"
+  className="ProductGrid__PG-svRIz bIpvyY"
 >
   TEST
 </div>

@@ -2,7 +2,7 @@
 
 exports[`<ProductTitle /> Renders a ProductTitle 1`] = `
 <h1
-  className="ProductTitle-ertmtV hBRClR"
+  className="ProductTitle__PT-iIqmTV bAjZGN"
 >
   TEST
 </h1>

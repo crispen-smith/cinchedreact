@@ -119,50 +119,54 @@ exports[`<CorsetGallery /> Renders a Corset Snapshot when LoggedIn = True 1`] = 
               </SideEffect(NullComponent)>
             </HelmetWrapper>
             <ProductTitle>
-              <h1
-                className="ProductTitle-ertmtV hBRClR"
-              >
-                All
-                 Corsets
-              </h1>
+              <ProductTitle__PT>
+                <h1
+                  className="ProductTitle__PT-iIqmTV bAjZGN"
+                >
+                  All
+                   Corsets
+                </h1>
+              </ProductTitle__PT>
             </ProductTitle>
             <ProductGrid>
-              <div
-                className="ProductGrid-dKkFgu fwcJUv"
-              >
-                <div>
-                   
-                </div>
-                <CorsetThumbnailComponent
-                  CorsetAlt="Create New"
-                  CorsetName="Create"
-                  CorsetThumbnailSource="sample.jpg"
-                  Summary="Create New"
+              <ProductGrid__PG>
+                <div
+                  className="ProductGrid__PG-svRIz bIpvyY"
                 >
-                  <CorsetThumbnailComponent__CTC>
-                    <div
-                      className="CorsetThumbnailComponent__CTC-bqQMiC iMVBHu"
-                    >
-                      <a
-                        href="/corsets/Create"
+                  <div>
+                     
+                  </div>
+                  <CorsetThumbnailComponent
+                    CorsetAlt="Create New"
+                    CorsetName="Create"
+                    CorsetThumbnailSource="sample.jpg"
+                    Summary="Create New"
+                  >
+                    <CorsetThumbnailComponent__CTC>
+                      <div
+                        className="CorsetThumbnailComponent__CTC-bqQMiC iMVBHu"
                       >
-                        <h2>
-                          Create
-                        </h2>
-                        <img
-                          alt="Create New"
-                          src="http://res.cloudinary.com/www-cinchedtight-com/image/upload/v1533177121/sample.jpg"
-                        />
-                        <div
-                          className="summary"
+                        <a
+                          href="/corsets/Create"
                         >
-                          Create New
-                        </div>
-                      </a>
-                    </div>
-                  </CorsetThumbnailComponent__CTC>
-                </CorsetThumbnailComponent>
-              </div>
+                          <h2>
+                            Create
+                          </h2>
+                          <img
+                            alt="Create New"
+                            src="http://res.cloudinary.com/www-cinchedtight-com/image/upload/v1533177121/sample.jpg"
+                          />
+                          <div
+                            className="summary"
+                          >
+                            Create New
+                          </div>
+                        </a>
+                      </div>
+                    </CorsetThumbnailComponent__CTC>
+                  </CorsetThumbnailComponent>
+                </div>
+              </ProductGrid__PG>
             </ProductGrid>
           </div>
         </CorsetGallery>
@@ -291,50 +295,54 @@ exports[`<CorsetGallery /> Renders a Corset Snapshot when LoggedIn = false 1`] =
               </SideEffect(NullComponent)>
             </HelmetWrapper>
             <ProductTitle>
-              <h1
-                className="ProductTitle-ertmtV hBRClR"
-              >
-                All
-                 Corsets
-              </h1>
+              <ProductTitle__PT>
+                <h1
+                  className="ProductTitle__PT-iIqmTV bAjZGN"
+                >
+                  All
+                   Corsets
+                </h1>
+              </ProductTitle__PT>
             </ProductTitle>
             <ProductGrid>
-              <div
-                className="ProductGrid-dKkFgu fwcJUv"
-              >
-                <div>
-                   
-                </div>
-                <CorsetThumbnailComponent
-                  CorsetAlt="Create New"
-                  CorsetName="Create"
-                  CorsetThumbnailSource="sample.jpg"
-                  Summary="Create New"
+              <ProductGrid__PG>
+                <div
+                  className="ProductGrid__PG-svRIz bIpvyY"
                 >
-                  <CorsetThumbnailComponent__CTC>
-                    <div
-                      className="CorsetThumbnailComponent__CTC-bqQMiC iMVBHu"
-                    >
-                      <a
-                        href="/corsets/Create"
+                  <div>
+                     
+                  </div>
+                  <CorsetThumbnailComponent
+                    CorsetAlt="Create New"
+                    CorsetName="Create"
+                    CorsetThumbnailSource="sample.jpg"
+                    Summary="Create New"
+                  >
+                    <CorsetThumbnailComponent__CTC>
+                      <div
+                        className="CorsetThumbnailComponent__CTC-bqQMiC iMVBHu"
                       >
-                        <h2>
-                          Create
-                        </h2>
-                        <img
-                          alt="Create New"
-                          src="http://res.cloudinary.com/www-cinchedtight-com/image/upload/v1533177121/sample.jpg"
-                        />
-                        <div
-                          className="summary"
+                        <a
+                          href="/corsets/Create"
                         >
-                          Create New
-                        </div>
-                      </a>
-                    </div>
-                  </CorsetThumbnailComponent__CTC>
-                </CorsetThumbnailComponent>
-              </div>
+                          <h2>
+                            Create
+                          </h2>
+                          <img
+                            alt="Create New"
+                            src="http://res.cloudinary.com/www-cinchedtight-com/image/upload/v1533177121/sample.jpg"
+                          />
+                          <div
+                            className="summary"
+                          >
+                            Create New
+                          </div>
+                        </a>
+                      </div>
+                    </CorsetThumbnailComponent__CTC>
+                  </CorsetThumbnailComponent>
+                </div>
+              </ProductGrid__PG>
             </ProductGrid>
           </div>
         </CorsetGallery>

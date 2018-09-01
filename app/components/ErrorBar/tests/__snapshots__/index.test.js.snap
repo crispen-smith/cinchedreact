@@ -2,7 +2,7 @@
 
 exports[`<Errorbar /> Renders an ErrorBar 1`] = `
 <div
-  className="ErrorBar-jIbckV kWZWPS"
+  className="ErrorBar__EB-erMhZb iBRxVy"
 >
   TEST
 </div>

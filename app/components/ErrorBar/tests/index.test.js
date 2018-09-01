@@ -5,7 +5,7 @@ import ErrorBar from '../index';
 
 describe('<Errorbar />', () => {
   it('Renders an ErrorBar', () => {
-    const tree = renderer.create(<ErrorBar>TEST</ErrorBar>).toJSON();
+    const tree = renderer.create(<ErrorBar message="TEST" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -49,7 +49,7 @@ class CloudinaryLoaderComponent extends React.Component {
 
   render() {
     const error = this.state.error ? (
-      <ErrorBar>{this.state.err}</ErrorBar>
+      <ErrorBar message={this.state.err} />
     ) : null;
     return (
       <CLC>
