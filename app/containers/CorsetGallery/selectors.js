@@ -41,17 +41,12 @@ const makeSelectorFilteredCorsets = () => {
   const selectCorsets = makeSelectCorsets();
   const selectFilter = makeSelectCorsetGalleryFilter();
 
-  return createSelector(
-    [selectCorsets, selectFilter],
-    (corsets, filter) =>
-    /* eslint-disable */
-    corsets.filter ?
-      filter === 'all'
-        ? corsets
-        : corsets.filter(corset => corset.type === filter)
-      : [],
-    /* eslint-enable */
-  );
+  function makeCorsetFilter(corsets, filter) {
+    if (filter === 'all' || typeof filter === 'undefined') return corsets;
+    return corsets.filter(corset => corset.type === filter);
+  }
+
+  return createSelector([selectCorsets, selectFilter], makeCorsetFilter);
 };
 
 export default makeSelectCorsetGallery;

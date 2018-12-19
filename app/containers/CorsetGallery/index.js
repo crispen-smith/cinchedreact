@@ -29,25 +29,28 @@ import ProductTitle from '../../components/ProductTitle';
 
 /* eslint-disable react/prefer-stateless-function */
 export class CorsetGallery extends React.Component {
-  constructor(props) {
-    super(props);
-    const { filter } = props.match.params;
-
-    const setFilterAction = actions.setFilter(filter);
-    props.dispatch(setFilterAction);
-  }
-  componentDidMount() {
-    this.props.dispatch(actions.resetAction());
-  }
-
   render() {
-    const { filter } = this.props;
+    /* Pre-render refresh the Corsets filter.  This is done pre-filter as it's impossible to
+    reasonably predict whether a constructor is going to be called.  */
 
-    const displayFilter =
-      filter && filter.substring
-        ? filter.substring(0, 1).toUpperCase() +
-          filter.substring(1, filter.length)
-        : '';
+    /* eslint-disable no-constant-condition */
+    // GET THE CURRENT URL BASED FILTER
+    let { filter } = this.props.match.params;
+    if (typeof filter === 'undefined') filter = 'all';
+    else
+      filter =
+        filter.substring(0, 1).toUpperCase() +
+        filter.substring(1, filter.length);
+
+    // IF CURRENT URL BASED FILTER DOESN'T MATCH MOST RECENT FILTER, UPDATE THE STATE
+    if (filter !== this.props.filter) {
+      const setFilterAction = actions.setFilter(filter);
+      this.props.dispatch(setFilterAction);
+    }
+
+    let displayFilter;
+    if (filter === 'all') displayFilter = '';
+    else displayFilter = filter;
 
     const displayCorsets =
       this.props.displayCorsets.length >= 1 ? (
