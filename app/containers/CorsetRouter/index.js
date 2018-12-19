@@ -9,6 +9,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import CorsetEditor from 'containers/CorsetEditor';
 import CorsetGallery from 'containers/CorsetGallery';
+import CorsetReset from 'containers/CorsetReset';
 import CorsetCreator from 'containers/CorsetCreator';
 import Corset from 'containers/Corset';
 import NotFoundComponent from '../../components/NotFoundComponent';
@@ -26,6 +27,8 @@ const CorsetRouter = () => (
       path="/corsets/:filter(all|Overbust|Underbust)"
       component={CorsetGallery}
     />
+    <Route exact path="/corsests/reset/" component={CorsetReset} />
+
     <Route
       exact
       path="/corsets/:filter(Overbust|Underbust)/:id"
