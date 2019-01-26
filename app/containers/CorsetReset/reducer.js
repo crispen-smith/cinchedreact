@@ -26,7 +26,7 @@ function corsetResetReducer(state = initialState, action) {
 
 const resetCorsets = state => {
   const newState = state.toJS();
-  if (newState.corsets) newState.corsets = [];
+  newState.corsets = [];
   return fromJS(newState);
 };
 

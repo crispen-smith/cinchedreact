@@ -36,7 +36,17 @@ class CorsetReset extends React.Component {
   }
 
   render() {
-    return <div>CORSET RESET</div>;
+    const message = this.props.loggedIn ? (
+      <span>Gallery has been Reset</span>
+    ) : (
+      <span>Admin Access required.</span>
+    );
+    return (
+      <React.Fragment>
+        <h1>CORSET RESET</h1>
+        {message}
+      </React.Fragment>
+    );
   }
 }
 

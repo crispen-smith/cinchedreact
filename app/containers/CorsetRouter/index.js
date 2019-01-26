@@ -18,20 +18,20 @@ const CorsetRouter = () => (
   <Switch>
     <Route
       exact
-      sensitive
-      path="/corsets/edit/:filter(Overbust|Underbust)/:id"
+      path="/corsets/edit/:filter(overbust|underbust)/:id"
       component={CorsetEditor}
     />
     <Route
       exact
-      path="/corsets/:filter(all|Overbust|Underbust)"
+      path="/corsets/:filter(all|overbust|underbust)"
       component={CorsetGallery}
     />
-    <Route exact path="/corsests/reset/" component={CorsetReset} />
+
+    <Route exact path="/corsets/reset/" component={CorsetReset} />
 
     <Route
       exact
-      path="/corsets/:filter(Overbust|Underbust)/:id"
+      path="/corsets/:filter(overbust|underbust)/:id"
       component={Corset}
     />
     <Route exact path="/corsets/create/" component={CorsetCreator} />
