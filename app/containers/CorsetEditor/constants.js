@@ -15,7 +15,8 @@ const actionTypes = keymirror({
   setPrimaryImage: null,
   addImage: null,
   setPrice: null,
-  reset: null,
+  publish: null,
+  unpublish: null,
 });
 
 export default actionTypes;

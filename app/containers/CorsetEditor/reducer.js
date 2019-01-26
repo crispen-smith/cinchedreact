@@ -11,15 +11,11 @@ export const initialState = fromJS({});
 
 function corsetCreatorReducer(state = initialState, action) {
   switch (action.type) {
-    case actionTypes.create:
-      return createCorset(state, action);
-
     case actionTypes.save:
       return fromJS({
         ...state.toJS(),
         saving: true,
       });
-
     case actionTypes.isSaved:
       return setSaved(state);
     case actionTypes.setDescription:
@@ -30,25 +26,16 @@ function corsetCreatorReducer(state = initialState, action) {
       return addImage(state, action);
     case actionTypes.setPrice:
       return setPrice(state, action);
-    case actionTypes.reset:
-      return fromJS({
-        ...state.toJS(),
-        currentCorset: null,
-      });
+    case actionTypes.publish:
+      return publish(state, action);
+    case actionTypes.unpublish:
+      return unpublish(state, action);
     case actionTypes.default:
       return state;
     default:
       return state;
   }
 }
-
-const createCorset = (state, action) => {
-  const newState = state.toJS();
-  if (!newState.corsets) newState.corsets = [];
-  newState.corsets.push(action.corset);
-  newState.currentCorset = action.corset.name;
-  return fromJS(newState);
-};
 
 /* eslint-disable no-underscore-dangle */
 const __getCurrentCorset = state => {
@@ -122,15 +109,23 @@ const setSaved = state => {
   return fromJS(newState);
 };
 
-export default corsetCreatorReducer;
+const publish = state => {
+  const newState = {
+    ...state.toJS(),
+  };
+  const currentCorset = __getCurrentCorset(state);
+  currentCorset.published = true;
+  newState.corsets = __getNewCorsetList(newState, currentCorset);
+  return fromJS(newState);
+};
 
-// const actionTypes = keymirror({
-//  X default
-//  X save
-//  X isSaved
-//  X create (Adds a new entry to the corsets array - expects a name and a type)
-//  X setDescription
-//  X setPrimaryImage
-//  X addImage
-//  X setPrice
-// });
+const unpublish = state => {
+  const newState = {
+    ...state.toJS(),
+  };
+  const currentCorset = __getCurrentCorset(state);
+  newState.corsets = __getNewCorsetList(newState, currentCorset);
+  return fromJS(newState);
+};
+
+export default corsetCreatorReducer;
