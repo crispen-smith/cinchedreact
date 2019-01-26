@@ -67,6 +67,14 @@ export function reset() {
   };
 }
 
-/*
-  All Corsets must be loaded to corsetGallery 
-*/
+export function publish() {
+  return {
+    type: actionTypes.publish,
+  };
+}
+
+export function unpublish() {
+  return {
+    type: actionTypes.unpublish,
+  };
+}
