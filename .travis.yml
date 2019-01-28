@@ -15,7 +15,7 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 repo_token:
-  - 0lq12aDK8WFbRaMAzmncflijWndMvyxkw
+  - VaFDKpRlyUHQBkMPM5pcS3ByRBjPySP4w
 
 notifications:
   email:
