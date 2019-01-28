@@ -67,13 +67,12 @@ exports[`<CorsetGallery /> Renders a Corset Snapshot when LoggedIn = True 1`] = 
         <CorsetGallery
           corsetGallery={
             Object {
-              "currentCorset": "",
-              "filter": "all",
+              "filter": "All",
             }
           }
           dispatch={[Function]}
           displayCorsets={Array []}
-          filter="all"
+          filter="All"
           loggedIn={true}
           match={
             Object {
@@ -243,13 +242,12 @@ exports[`<CorsetGallery /> Renders a Corset Snapshot when LoggedIn = false 1`] =
         <CorsetGallery
           corsetGallery={
             Object {
-              "currentCorset": "",
-              "filter": "all",
+              "filter": "All",
             }
           }
           dispatch={[Function]}
           displayCorsets={Array []}
-          filter="all"
+          filter="All"
           loggedIn={true}
           match={
             Object {
