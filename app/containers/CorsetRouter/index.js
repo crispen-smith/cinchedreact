@@ -21,6 +21,7 @@ const CorsetRouter = () => (
       path="/corsets/edit/:filter(overbust|underbust)/:id"
       component={CorsetEditor}
     />
+
     <Route
       exact
       path="/corsets/:filter(all|overbust|underbust)"
