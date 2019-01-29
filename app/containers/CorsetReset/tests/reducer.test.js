@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 
-import corsetResetReducer from '../reducer';
+import corsetResetReducer, { resetCorsets } from '../reducer';
 
 import * as corsetResetActions from '../actions';
 
@@ -24,5 +24,14 @@ describe(corsetResetReducer, () => {
     expect(corsetResetReducer(state, corsetResetActions.reset())).toEqual(
       state.set('corsets', []),
     );
+  });
+});
+
+describe('resetCorsets', () => {
+  it('Should Return an empty gallery', () => {
+    const stateToTest = fromJS({ corsets: [1, 2, 3, 4] });
+    const expectedState = fromJS({ corsets: [] });
+
+    expect(resetCorsets(stateToTest)).toEqual(expectedState);
   });
 });
