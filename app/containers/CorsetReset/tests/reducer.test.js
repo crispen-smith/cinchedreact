@@ -13,20 +13,24 @@ describe(corsetResetReducer, () => {
 
   it('Should return the initial State when passed a default action', () => {
     const expectedResult = state;
-    expect(
-      corsetResetReducer(state, corsetResetActions.defaultAction()),
-    ).toEqual(expectedResult);
+    const action = corsetResetActions.defaultAction();
+    expect(corsetResetReducer(state, action)).toEqual(expectedResult);
   });
 
   it('Should handle the resetFilter action correctly', () => {
+    const action = corsetResetActions.resetAction();
     const placeholderList = [1, 2, 3, 4];
 
     const testState = fromJS({ corsets: [] });
     state.set('corsets', placeholderList);
 
-    expect(corsetResetReducer(state, corsetResetActions.resetAction())).toEqual(
-      testState,
-    );
+    expect(corsetResetReducer(state, action)).toEqual(testState);
+  });
+
+  it('Should return the initial State when passed any other action', () => {
+    const expectedResult = state;
+    const action = { type: 'test' };
+    expect(corsetResetReducer(state, action)).toEqual(expectedResult);
   });
 });
 
