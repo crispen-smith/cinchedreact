@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CorsetReset /> Renders a warning message when loggedIn = False 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "injectedReducers": Object {
+        "corsetGallery": [Function],
+      },
+      "injectedSagas": Object {},
+      "replaceReducer": [Function],
+      "runSaga": [Function],
+      "subscribe": [Function],
+      Symbol(Symbol.observable): [Function],
+    }
+  }
+>
+  <withReducer(Connect(CorsetReset))
+    match={
+      Object {
+        "params": Object {},
+      }
+    }
+  >
+    <Connect(CorsetReset)
+      match={
+        Object {
+          "params": Object {},
+        }
+      }
+    >
+      <CorsetReset
+        corsetGallery={
+          Object {
+            "corsets": Array [],
+          }
+        }
+        dispatch={[Function]}
+        loggedIn={true}
+        match={
+          Object {
+            "params": Object {},
+          }
+        }
+      >
+        <h1>
+          CORSET RESET
+        </h1>
+        <span>
+          Gallery has been Reset
+        </span>
+      </CorsetReset>
+    </Connect(CorsetReset)>
+  </withReducer(Connect(CorsetReset))>
+</Provider>
+`;
+
+exports[`<CorsetReset /> Renders the Reset Message when loggedIn = True 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "injectedReducers": Object {
+        "corsetGallery": [Function],
+      },
+      "injectedSagas": Object {},
+      "replaceReducer": [Function],
+      "runSaga": [Function],
+      "subscribe": [Function],
+      Symbol(Symbol.observable): [Function],
+    }
+  }
+>
+  <withReducer(Connect(CorsetReset))
+    match={
+      Object {
+        "params": Object {},
+      }
+    }
+  >
+    <Connect(CorsetReset)
+      match={
+        Object {
+          "params": Object {},
+        }
+      }
+    >
+      <CorsetReset
+        corsetGallery={
+          Object {
+            "corsets": Array [],
+          }
+        }
+        dispatch={[Function]}
+        loggedIn={true}
+        match={
+          Object {
+            "params": Object {},
+          }
+        }
+      >
+        <h1>
+          CORSET RESET
+        </h1>
+        <span>
+          Gallery has been Reset
+        </span>
+      </CorsetReset>
+    </Connect(CorsetReset)>
+  </withReducer(Connect(CorsetReset))>
+</Provider>
+`;
